@@ -1,0 +1,10 @@
+package com.spring.Beans;
+
+import org.springframework.stereotype.Component;
+
+@Component // @Component annotation indicates the spring container to create the bean.
+public class PaymentService {
+	public void pay() {
+		System.out.println("Paying...");
+	}
+}

@@ -1,0 +1,14 @@
+package com.spring.Beans;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration // @Configuration annotation will indicate the spring container that this is a configuration file.
+public class BeanConfig {
+	
+	@Bean
+	RazorpayPaymentService razorpayPaymentService() {
+		
+		return new RazorpayPaymentService();
+	}
+}

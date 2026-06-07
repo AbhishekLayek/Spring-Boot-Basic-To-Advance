@@ -1,0 +1,5 @@
+package com.spring.Beans;
+
+public class RazorpayPaymentService {
+
+}

@@ -1,0 +1,36 @@
+package com.spring.Beans;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BeansApplication implements CommandLineRunner{
+	
+	@Autowired // @Autowired annotation is used for dependency injection. It'll inject the bean.
+	PaymentService paymentService;
+	
+	@Autowired
+	RazorpayPaymentService razorpayPaymentService;
+	
+	@Autowired
+	BeanScopes bean1;
+	
+	@Autowired
+	BeanScopes bean2;
+
+	public static void main(String[] args) {
+		SpringApplication.run(BeansApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		paymentService.pay();
+		razorpayPaymentService.pay();
+		
+		System.out.println(bean1.hashCode());
+		System.out.println(bean2.hashCode());
+	}
+
+}
