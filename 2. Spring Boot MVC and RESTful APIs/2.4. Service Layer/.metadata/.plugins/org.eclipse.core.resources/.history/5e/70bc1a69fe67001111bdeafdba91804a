@@ -1,0 +1,5 @@
+package com.spring.SpringMVC_ServiceLayer.entities;
+
+public class EmployeeEntity {
+
+}

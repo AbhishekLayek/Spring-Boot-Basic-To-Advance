@@ -1,0 +1,6 @@
+spring.application.name=SpringMVC_ServiceLayer
+spring.jpa.hibernate.ddl-auto=none
+spring.h2.console.enabled=true
+spring.datasource.url=
+spring.datasource.username=h2DB
+spring.datasource.password==Abhi@2001

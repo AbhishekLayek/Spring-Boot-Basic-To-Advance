@@ -1,0 +1,12 @@
+package com.spring.SpringMVC_ServiceLayer.configs;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
+
+public class MapperConfig extends ModelMapper{
+	
+	@Bean
+	public ModelMapper getmodelMapper() {
+		return new ModelMapper();
+	}
+}

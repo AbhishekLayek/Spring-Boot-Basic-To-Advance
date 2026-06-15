@@ -1,0 +1,19 @@
+package com.spring.SpringMVC_ServiceLayer.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.SpringMVC_ServiceLayer.configs.MapperConfig;
+import com.spring.SpringMVC_ServiceLayer.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+	
+	private final MapperConfig mapperConfig;
+
+	public EmployeeService(EmployeeRepository empRepository, MapperConfig mapper) {
+		this.empRepository = empRepository;
+		this.mapperConfig = mapperConfig;
+	}
+}

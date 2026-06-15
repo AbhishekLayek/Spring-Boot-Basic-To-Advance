@@ -1,0 +1,43 @@
+package com.spring.SpringMVC_ServiceLayer.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.SpringMVC_ServiceLayer.configs.MapperConfig;
+import com.spring.SpringMVC_ServiceLayer.dto.EmployeeDTO;
+import com.spring.SpringMVC_ServiceLayer.entities.EmployeeEntity;
+import com.spring.SpringMVC_ServiceLayer.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+	
+	private final MapperConfig mapperConfig;
+
+	public EmployeeService(EmployeeRepository empRepository, MapperConfig mapperConfig) {
+		this.empRepository = empRepository;
+		this.mapperConfig = mapperConfig;
+	}
+
+	public EmployeeDTO getEmployeeById(Integer id) {
+		EmployeeEntity empEntity = empRepository.findById(id).orElse(null);
+		return mapperConfig.map(empEntity, EmployeeDTO.class);
+	}
+
+	public List<EmployeeDTO> getAllEmployee() {
+		List<EmployeeEntity> empEntityList = empRepository.findAll();
+		
+		return empEntityList
+				.stream()
+				.map(empEntity -> mapperConfig.map(empEntity, EmployeeDTO.class))
+				.collect(Collectors.toList());
+	}
+
+	public EmployeeDTO createEmployee(EmployeeEntity inputEmpEntity) {
+		EmployeeEntity empEntity = empRepository.save(inputEmpEntity);
+		return mapperConfig.map(empEntity, EmployeeDTO.class);
+	}
+}

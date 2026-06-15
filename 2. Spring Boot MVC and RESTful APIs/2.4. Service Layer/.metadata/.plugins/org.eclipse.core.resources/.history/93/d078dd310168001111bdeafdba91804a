@@ -1,0 +1,12 @@
+package com.spring.SpringMVC_ServiceLayer.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.SpringMVC_ServiceLayer.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+	
+}
