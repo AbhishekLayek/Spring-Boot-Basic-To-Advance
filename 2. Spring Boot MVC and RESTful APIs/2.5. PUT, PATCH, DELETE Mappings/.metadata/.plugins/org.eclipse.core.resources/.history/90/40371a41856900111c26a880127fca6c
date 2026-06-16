@@ -1,0 +1,30 @@
+package com.spring.SpringMVC.services;
+
+import java.util.Optional;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import com.spring.SpringMVC.configs.ModelMapperConfig;
+import com.spring.SpringMVC.dto.EmployeeDTO;
+import com.spring.SpringMVC.entities.EmployeeEntity;
+import com.spring.SpringMVC.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+	private final ModelMapperConfig modelMapper;
+	
+	public EmployeeService(EmployeeRepository empRepository, ModelMapperConfig modelMapper) {
+		this.empRepository = empRepository;
+		this.modelMapper = modelMapper;
+	}
+
+	public ResponseEntity<Optional<EmployeeDTO>> getEmployeeById(Integer id) {
+		Optional<EmployeeEntity> empEntity = empRepository.findById(id);
+		
+	}
+	
+	
+}

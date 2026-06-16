@@ -1,0 +1,31 @@
+package com.spring.SpringMVC.controllers;
+
+import java.util.Optional;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.SpringMVC.configs.ModelMapperConfig;
+import com.spring.SpringMVC.dto.EmployeeDTO;
+import com.spring.SpringMVC.services.EmployeeService;
+
+@RestController
+@RequestMapping("/employees")
+public class EmployeeController {
+	
+	private final EmployeeService empService;
+	private final ModelMapperConfig modelMapper;
+	
+	public EmployeeController(EmployeeService empService, ModelMapperConfig modelMapper) {
+		this.empService = empService;
+		this.modelMapper = modelMapper;
+	}
+	
+	@GetMapping("/find")
+	public ResponseEntity<Optional<EmployeeDTO>> getEmployeeById(@RequestParam Integer id){
+		return empService.getEmployeeById(id);
+	}
+}

@@ -1,0 +1,70 @@
+package com.spring.SpringMVC.services;
+
+import java.lang.reflect.Field;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.data.util.ReflectionUtils;
+import org.springframework.stereotype.Service;
+
+import com.spring.SpringMVC.configs.ModelMapperConfig;
+import com.spring.SpringMVC.dto.EmployeeDTO;
+import com.spring.SpringMVC.entities.EmployeeEntity;
+import com.spring.SpringMVC.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+	private final ModelMapperConfig modelMapper;
+	
+	public EmployeeService(EmployeeRepository empRepository, ModelMapperConfig modelMapper) {
+		this.empRepository = empRepository;
+		this.modelMapper = modelMapper;
+	}
+	
+	public boolean ISEmployeeExistsById(Integer id) {
+		return empRepository.existsById(id);
+	}
+
+	public Optional<EmployeeDTO> getEmployeeById(Integer id) {
+		return empRepository.findById(id).map(empEntity -> modelMapper.map(empEntity, EmployeeDTO.class));
+	}
+
+	public List<EmployeeDTO> getAllEmployees() {
+		return empRepository.findAll().stream().map(empEntity -> modelMapper.map(empEntity, EmployeeDTO.class)).collect(Collectors.toList());
+	}
+
+	public EmployeeDTO createEmployee(EmployeeDTO empDTO) {
+		EmployeeEntity empEntity = empRepository.save(modelMapper.map(empDTO, EmployeeEntity.class));
+		return modelMapper.map(empEntity, EmployeeDTO.class);
+	}
+
+	public EmployeeDTO updateEmployee(Integer id, EmployeeDTO inputEmpDTO) {
+		if(!ISEmployeeExistsById(id)) return null;
+		EmployeeEntity empEntity = empRepository.save(modelMapper.map(inputEmpDTO, EmployeeEntity.class));
+		return modelMapper.map(empEntity, EmployeeDTO.class);
+	}
+
+	public Boolean deleteEmployeeById(Integer id) {
+		if(!ISEmployeeExistsById(id)) return null;
+		empRepository.deleteById(id);
+		return true;
+	}
+
+	public EmployeeDTO updateEmployeePartially(Integer id, Map<String, Object> updates) {
+		if(!ISEmployeeExistsById(id)) return null;
+		EmployeeEntity empEntity = empRepository.findById(id).get();
+		updates.forEach((field, value)->{
+			Field fieldToBeUpdated  = ReflectionUtils.getRequiredField(EmployeeEntity.class, field);
+			fieldToBeUpdated.setAccessible(true);
+			ReflectionUtils.setField(fieldToBeUpdated, empEntity, value);
+		});
+		
+		return modelMapper.map(empRepository.save(empEntity), EmployeeDTO.class);
+	}
+	
+	
+}

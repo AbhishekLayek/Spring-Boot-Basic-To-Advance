@@ -1,0 +1,5 @@
+package com.spring.SpringMVC.dto;
+
+public class EmployeeDTO {
+
+}

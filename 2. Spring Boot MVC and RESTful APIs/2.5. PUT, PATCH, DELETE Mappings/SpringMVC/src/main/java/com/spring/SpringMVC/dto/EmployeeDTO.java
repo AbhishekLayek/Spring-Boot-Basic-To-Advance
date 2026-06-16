@@ -1,0 +1,27 @@
+package com.spring.SpringMVC.dto;
+
+import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class EmployeeDTO {
+	private Integer id;
+	private String name;
+	private String email;
+	private Integer age;
+	private String designation;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate dateOfJoining;
+	@JsonProperty("isActive")
+	private Boolean isActive;
+}

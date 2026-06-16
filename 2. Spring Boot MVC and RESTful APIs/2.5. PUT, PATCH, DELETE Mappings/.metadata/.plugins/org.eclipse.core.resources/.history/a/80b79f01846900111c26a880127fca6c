@@ -1,0 +1,20 @@
+package com.spring.SpringMVC.controllers;
+
+import org.springframework.stereotype.Controller;
+
+import com.spring.SpringMVC.configs.ModelMapperConfig;
+import com.spring.SpringMVC.services.EmployeeService;
+
+@Controller
+public class EmployeeController {
+	
+	private final EmployeeService empService;
+	private final ModelMapperConfig modelMapper;
+	
+	public EmployeeController(EmployeeService empService, ModelMapperConfig modelMapper) {
+		this.empService = empService;
+		this.modelMapper = modelMapper;
+	}
+	
+	
+}
