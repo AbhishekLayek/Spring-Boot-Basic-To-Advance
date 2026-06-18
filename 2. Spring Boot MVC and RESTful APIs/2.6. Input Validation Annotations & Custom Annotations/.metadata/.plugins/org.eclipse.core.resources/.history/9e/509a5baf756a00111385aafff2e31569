@@ -1,0 +1,5 @@
+package com.spring.InputValidation.repositories;
+
+public interface EmployeeRepository {
+
+}

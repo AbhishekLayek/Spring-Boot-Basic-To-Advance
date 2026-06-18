@@ -1,0 +1,5 @@
+package com.spring.InputValidation.configs;
+
+public class ModelMapperConfig {
+
+}

@@ -1,0 +1,5 @@
+package com.spring.InputValidation.annotations;
+
+public @interface EmployeeDesignationValidation {
+
+}

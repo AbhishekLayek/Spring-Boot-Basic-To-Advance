@@ -1,0 +1,26 @@
+package com.spring.InputValidation.controllers;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.InputValidation.dto.EmployeeDTO;
+import com.spring.InputValidation.services.EmployeeService;
+
+@RestController
+@RequestMapping("/employees")
+public class EmployeeController {
+	private final EmployeeService empService;
+
+	public EmployeeController(EmployeeService empService) {
+		this.empService = empService;
+	}
+	
+	@GetMapping("/find")
+	public ResponseEntity<EmployeeDTO> getEmployeeById(@RequestParam Integer id){
+		empService.getEmployeeById(id);
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.spring.InputValidation.dto;
+
+public class EmployeeDTO {
+
+}
