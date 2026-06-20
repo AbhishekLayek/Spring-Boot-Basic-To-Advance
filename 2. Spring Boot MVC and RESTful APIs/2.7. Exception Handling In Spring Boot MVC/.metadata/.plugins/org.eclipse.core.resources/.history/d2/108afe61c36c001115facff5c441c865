@@ -1,0 +1,20 @@
+package com.spring.ExceptionHandling.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.ExceptionHandling.configs.ModelMapperConfig;
+import com.spring.ExceptionHandling.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private EmployeeRepository empRepository;
+	private ModelMapperConfig modelMapper;
+	
+	public EmployeeService(EmployeeRepository empRepository, ModelMapperConfig modelMapper) {
+		this.empRepository = empRepository;
+		this.modelMapper = modelMapper;
+	}
+	
+	
+}

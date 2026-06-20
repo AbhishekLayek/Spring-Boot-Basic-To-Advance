@@ -1,0 +1,5 @@
+package com.spring.ExceptionHandling.exceptions;
+
+public class ResourceNotFoundException {
+
+}

@@ -1,0 +1,5 @@
+package com.spring.ExceptionHandling.repositories;
+
+public class EmployeeRepository {
+
+}

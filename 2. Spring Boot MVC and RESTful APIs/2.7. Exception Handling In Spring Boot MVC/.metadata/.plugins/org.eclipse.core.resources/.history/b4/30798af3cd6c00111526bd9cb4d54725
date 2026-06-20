@@ -1,0 +1,44 @@
+package com.spring.ExceptionHandling.services;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.ExceptionHandling.configs.ModelMapperConfig;
+import com.spring.ExceptionHandling.dto.EmployeeDTO;
+import com.spring.ExceptionHandling.entities.EmployeeEntity;
+import com.spring.ExceptionHandling.repositories.EmployeeRepository;
+
+import jakarta.validation.Valid;
+
+@Service
+public class EmployeeService {
+	
+	private EmployeeRepository empRepository;
+	private ModelMapperConfig modelMapper;
+	
+	public EmployeeService(EmployeeRepository empRepository, ModelMapperConfig modelMapper) {
+		this.empRepository = empRepository;
+		this.modelMapper = modelMapper;
+	}
+
+	public Optional<EmployeeDTO> getEmployeeById(Integer id) {
+		return empRepository.findById(id).map(empEntity -> modelMapper.map(empEntity, EmployeeDTO.class));
+	}
+
+	public List<EmployeeDTO> getAllEmployee() {
+		return empRepository.findAll().stream().map(empEntity -> modelMapper.map(empEntity, EmployeeDTO.class)).collect(Collectors.toList());
+	}
+
+	public EmployeeDTO createEmployee(@Valid EmployeeDTO empDTO) {
+		EmployeeEntity empEntity = empRepository.save(modelMapper.map(empDTO, EmployeeEntity.class));
+		return modelMapper.map(empEntity, EmployeeDTO.class);
+	}
+
+	public EmployeeDTO updateEmployee(Integer id, @Valid EmployeeDTO empDTO) {
+	}
+	
+	
+}

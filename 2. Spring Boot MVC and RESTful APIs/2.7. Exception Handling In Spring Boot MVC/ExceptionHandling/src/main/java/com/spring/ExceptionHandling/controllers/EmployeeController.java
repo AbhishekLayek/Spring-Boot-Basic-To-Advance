@@ -1,0 +1,63 @@
+package com.spring.ExceptionHandling.controllers;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.ExceptionHandling.dto.EmployeeDTO;
+import com.spring.ExceptionHandling.exceptions.ResourceNotFoundException;
+import com.spring.ExceptionHandling.services.EmployeeService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/employees")
+public class EmployeeController {
+	
+	private EmployeeService empService;
+
+	public EmployeeController(EmployeeService empService) {
+		this.empService = empService;
+	}
+	
+	@GetMapping("/find")
+	public ResponseEntity<EmployeeDTO> getEmployeeById(@RequestParam Integer id){
+		return empService.getEmployeeById(id).map(empDTO -> ResponseEntity.ok(empDTO)).orElseThrow(() -> new ResourceNotFoundException("Employee Not Found With Id: " + id));
+	}
+	
+	@GetMapping("/findAll")
+	public ResponseEntity<List<EmployeeDTO>> getAllEmployee(){
+		return ResponseEntity.ok(empService.getAllEmployee());
+	}
+	
+	@PostMapping("/add")
+	public ResponseEntity<EmployeeDTO> createEmployee(@RequestBody @Valid EmployeeDTO empDTO){
+		return new ResponseEntity<>(empService.createEmployee(empDTO), HttpStatus.CREATED);
+	}
+	
+	@PutMapping("/update")
+	public ResponseEntity<EmployeeDTO> updateEmployee(@RequestParam Integer id, @RequestBody  @Valid EmployeeDTO empDTO){
+		return ResponseEntity.ok(empService.updateEmployee(id, empDTO));
+	}
+	
+	@DeleteMapping("/delete")
+	public ResponseEntity<String> deleteEmployeeById(@RequestParam Integer id){
+		return ResponseEntity.ok(empService.deleteEmployeeById(id));
+	}
+	
+	@PatchMapping("/partialUpdate")
+	public ResponseEntity<EmployeeDTO> updateEmployeePartially(@RequestParam Integer id, @RequestBody Map<String, Object> updates){
+		return ResponseEntity.ok(empService.updateEmployeePartially(id, updates));
+	}
+}

@@ -1,0 +1,17 @@
+package com.spring.ExceptionHandling.controllers;
+
+import org.springframework.stereotype.Controller;
+
+import com.spring.ExceptionHandling.services.EmployeeService;
+
+@Controller
+public class EmployeeController {
+	
+	private EmployeeService empService;
+
+	public EmployeeController(EmployeeService empService) {
+		this.empService = empService;
+	}
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.spring.ExceptionHandling.entities;
+
+public class EmployeeEntity {
+
+}

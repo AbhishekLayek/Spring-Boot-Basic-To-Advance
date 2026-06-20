@@ -1,0 +1,43 @@
+package com.spring.ExceptionHandling.controllers;
+
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.ExceptionHandling.dto.EmployeeDTO;
+import com.spring.ExceptionHandling.exceptions.ResourceNotFoundException;
+import com.spring.ExceptionHandling.services.EmployeeService;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/employees")
+public class EmployeeController {
+	
+	private EmployeeService empService;
+
+	public EmployeeController(EmployeeService empService) {
+		this.empService = empService;
+	}
+	
+	@GetMapping("/find")
+	public ResponseEntity<EmployeeDTO> getEmployeeById(@RequestParam Integer id){
+		return empService.getEmployeeById(id).map(empDTO -> ResponseEntity.ok(empDTO)).orElseThrow(() -> new ResourceNotFoundException("Resource Not Found With Id: " + id));
+	}
+	
+	@GetMapping("/findAll")
+	public ResponseEntity<List<EmployeeDTO>> getAllEmployee(){
+		return ResponseEntity.ok(empService.getAllEmployee());
+	}
+	
+	@PostMapping("/add")
+	public ResponseEntity<EmployeeDTO> createEmployee(@RequestBody @Valid EmployeeDTO empDTO){
+		empService.createEmployee(empDTO);
+	}
+}

@@ -1,0 +1,27 @@
+package com.spring.ExceptionHandling.services;
+
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.ExceptionHandling.configs.ModelMapperConfig;
+import com.spring.ExceptionHandling.dto.EmployeeDTO;
+import com.spring.ExceptionHandling.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private EmployeeRepository empRepository;
+	private ModelMapperConfig modelMapper;
+	
+	public EmployeeService(EmployeeRepository empRepository, ModelMapperConfig modelMapper) {
+		this.empRepository = empRepository;
+		this.modelMapper = modelMapper;
+	}
+
+	public Optional<EmployeeDTO> getEmployeeById(Integer id) {
+		return empRepository.findById(id).map(empEntity -> modelMapper.map(empEntity, EmployeeDTO.class));
+	}
+	
+	
+}

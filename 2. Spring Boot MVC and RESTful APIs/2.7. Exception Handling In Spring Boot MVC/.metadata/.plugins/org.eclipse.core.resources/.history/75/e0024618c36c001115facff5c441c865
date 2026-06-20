@@ -1,0 +1,23 @@
+package com.spring.ExceptionHandling.controllers;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.spring.ExceptionHandling.dto.EmployeeDTO;
+import com.spring.ExceptionHandling.services.EmployeeService;
+
+@Controller
+public class EmployeeController {
+	
+	private EmployeeService empService;
+
+	public EmployeeController(EmployeeService empService) {
+		this.empService = empService;
+	}
+	
+	@GetMapping
+	public ResponseEntity<EmployeeDTO> getEmployeeById(){
+		
+	}
+}
