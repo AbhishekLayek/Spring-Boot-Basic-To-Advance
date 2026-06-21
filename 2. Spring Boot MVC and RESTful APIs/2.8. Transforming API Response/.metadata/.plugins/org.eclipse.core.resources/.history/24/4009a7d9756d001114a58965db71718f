@@ -1,0 +1,18 @@
+package com.spring.APIResponse.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.APIResponse.configs.ModelMapperConfig;
+import com.spring.APIResponse.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+	private final ModelMapperConfig modelMapper;
+	
+	public EmployeeService(EmployeeRepository empRepository, ModelMapperConfig modelMapper) {
+		this.empRepository = empRepository;
+		this.modelMapper = modelMapper;
+	}
+}

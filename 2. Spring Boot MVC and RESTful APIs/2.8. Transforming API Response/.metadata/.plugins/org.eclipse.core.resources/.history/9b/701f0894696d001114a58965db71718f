@@ -1,0 +1,5 @@
+package com.spring.APIResponse.annotations;
+
+public @interface EmployeeRoleValidation {
+
+}

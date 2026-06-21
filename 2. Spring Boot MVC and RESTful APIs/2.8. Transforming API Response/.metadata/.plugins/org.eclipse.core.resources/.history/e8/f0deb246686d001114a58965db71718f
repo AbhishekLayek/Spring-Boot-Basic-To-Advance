@@ -1,0 +1,5 @@
+package com.spring.APIResponse.entities;
+
+public class EmployeeEntity {
+
+}

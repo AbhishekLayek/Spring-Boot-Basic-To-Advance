@@ -1,0 +1,5 @@
+package com.spring.APIResponse.advices;
+
+public class ApiResponse {
+
+}

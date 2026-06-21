@@ -1,0 +1,5 @@
+package com.spring.APIResponse.dto;
+
+public class EmployeeDTO {
+
+}

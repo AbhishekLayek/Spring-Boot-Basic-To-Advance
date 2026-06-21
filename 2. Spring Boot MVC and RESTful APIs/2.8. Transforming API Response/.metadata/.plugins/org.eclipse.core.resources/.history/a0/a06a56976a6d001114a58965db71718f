@@ -1,0 +1,5 @@
+package com.spring.APIResponse.repositories;
+
+public interface EmployeeRepository {
+
+}

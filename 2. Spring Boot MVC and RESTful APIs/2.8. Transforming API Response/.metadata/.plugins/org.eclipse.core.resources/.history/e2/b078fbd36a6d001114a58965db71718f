@@ -1,0 +1,5 @@
+package com.spring.APIResponse.configs;
+
+public class ModelMapperConfig {
+
+}

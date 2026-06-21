@@ -1,0 +1,17 @@
+package com.spring.APIResponse.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.APIResponse.repositories.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	
+	private final EmployeeRepository empRepository;
+
+	public EmployeeService(com.spring.APIResponse.services.EmployeeRepository empRepository) {
+		this.empRepository = empRepository;
+	}
+	
+	
+}
