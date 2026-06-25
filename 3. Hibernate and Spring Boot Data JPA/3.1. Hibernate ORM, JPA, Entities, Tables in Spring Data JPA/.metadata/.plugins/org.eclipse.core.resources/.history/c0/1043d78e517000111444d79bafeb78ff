@@ -1,0 +1,8 @@
+INSERT INTO products
+(sku, title, price, quantity)
+VALUES
+('SKU1001', 'Wireless Mouse', 599.99, 50),
+('SKU1002', 'Mechanical Keyboard', 2499.00, 30),
+('SKU1003', 'USB-C Charger', 899.50, 100),
+('SKU1004', 'Laptop Stand', 1299.99, 25),
+('SKU1005', 'Bluetooth Speaker', 3499.00, 15);

@@ -1,0 +1,5 @@
+package com.spring.Hibernate.entities;
+
+public class Product {
+
+}
