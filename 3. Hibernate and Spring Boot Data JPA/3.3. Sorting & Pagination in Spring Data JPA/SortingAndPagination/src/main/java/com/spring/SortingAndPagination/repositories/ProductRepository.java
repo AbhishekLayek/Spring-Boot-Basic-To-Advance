@@ -1,0 +1,22 @@
+package com.spring.SortingAndPagination.repositories;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.spring.SortingAndPagination.dto.ProductDTO;
+import com.spring.SortingAndPagination.entities.ProductEntity;
+
+@Repository
+public interface ProductRepository extends JpaRepository<ProductEntity, Long>{
+
+	List<ProductEntity> findAllByOrderByTitle();
+
+	List<ProductEntity> findAllBy(Sort sortField);
+
+	Page<ProductEntity> findAllBy(Pageable pagable);
+}

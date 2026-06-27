@@ -1,0 +1,5 @@
+package com.spring.SortingAndPagination.entities;
+
+public class Product {
+
+}

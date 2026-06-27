@@ -1,0 +1,18 @@
+package com.spring.SortingAndPagination.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.SortingAndPagination.configs.ModelMapperConfig;
+import com.spring.SortingAndPagination.repositories.ProductRepository;
+
+@Service
+public class ProductService {
+	
+	private final ProductRepository productRepository;
+	private final ModelMapperConfig modelMapper;
+	
+	public ProductService(ProductRepository productRepository, ModelMapperConfig modelMapper) {
+		this.productRepository = productRepository;
+		this.modelMapper = modelMapper;
+	}
+}

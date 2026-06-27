@@ -1,0 +1,48 @@
+package com.spring.SortingAndPagination.services;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.spring.SortingAndPagination.configs.ModelMapperConfig;
+import com.spring.SortingAndPagination.dto.ProductDTO;
+import com.spring.SortingAndPagination.repositories.ProductRepository;
+
+@Service
+public class ProductService {
+	
+	private final int PAGE_SIZE = 5;
+	private final ProductRepository productRepository;
+	private final ModelMapperConfig modelMapper;
+	
+	public ProductService(ProductRepository productRepository, ModelMapperConfig modelMapper) {
+		this.productRepository = productRepository;
+		this.modelMapper = modelMapper;
+	}
+
+	public List<ProductDTO> getAllProductsSortedByTitle() {
+		return productRepository
+				.findAllByOrderByTitle()
+				.stream()
+				.map(productEntity -> modelMapper.map(productEntity, ProductDTO.class))
+				.collect(Collectors.toList());
+	}
+
+	public List<ProductDTO> getAllProductsCustomSorted(String sortField) {
+		return productRepository
+				.findAllBy(Sort.by(Sort.Order.asc(sortField)))
+				.stream()
+				.map(productEntity -> modelMapper.map(productEntity, ProductDTO.class))
+				.collect(Collectors.toList());
+	}
+
+	public List<ProductDTO> getAllProducts(int PageNumber) {
+		Pageable pagable = PageRequest.of(PageNumber, PAGE_SIZE);
+		return productRepository.findAllBy(pagable).getContent();
+	}
+}
