@@ -1,0 +1,5 @@
+package com.spring.SpringDataJPA.repositories;
+
+public interface EmployeeRepository {
+
+}

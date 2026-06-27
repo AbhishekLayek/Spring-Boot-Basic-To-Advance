@@ -1,0 +1,32 @@
+package com.spring.SpringDataJPA;
+
+import java.math.BigDecimal;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.spring.SpringDataJPA.entities.Product;
+import com.spring.SpringDataJPA.repositories.ProductRepository;
+
+@SpringBootTest
+class SpringDataJpaApplicationTests {
+	
+	@Autowired
+	ProductRepository productRepository;
+
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	void createRepository() {
+		Product product = Product
+				.builder()
+				.sku("SKU1005")
+				.title("Laptop")
+				.price(BigDecimal.valueOf(80000.00))
+				.quantity(10)
+				.build();
+	}
+}

@@ -1,0 +1,8 @@
+package com.spring.SpringDataJPA.entities;
+
+import jakarta.persistence.Entity;
+
+
+public class Product {
+
+}
