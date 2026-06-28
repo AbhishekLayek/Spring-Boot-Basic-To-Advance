@@ -1,0 +1,5 @@
+package com.spring.Projection.entities;
+
+public class PatientEntity {
+
+}

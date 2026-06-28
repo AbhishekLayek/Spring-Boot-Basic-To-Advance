@@ -1,0 +1,5 @@
+package com.spring.Projection.dto;
+
+public interface PatientDTOInterface {
+
+}

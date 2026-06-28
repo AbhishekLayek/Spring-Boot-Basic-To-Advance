@@ -1,0 +1,34 @@
+package com.spring.Projection.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.spring.Projection.dto.BloodGroupStats;
+import com.spring.Projection.dto.PatientInfoClass;
+import com.spring.Projection.dto.PatientInfoInterface;
+import com.spring.Projection.entities.PatientEntity;
+
+import jakarta.transaction.Transactional;
+
+@Repository
+public interface PatientRepository extends JpaRepository<PatientEntity, Integer>{
+
+	@Query("SELECT p.id as id, p.name as name, p.email as email FROM PatientEntity p")
+	List<PatientInfoInterface> getPatientInfoInterface();
+
+	@Query("SELECT new com.spring.Projection.dto.PatientInfoClass(p.id, p.name, p.email) FROM PatientEntity p")
+	List<PatientInfoClass> getPatientInfoClass();
+	
+	@Query("SELECT new com.spring.Projection.dto.BloodGroupStats(p.bloodGroup, COUNT(p)) FROM PatientEntity p GROUP BY p.bloodGroup ORDER BY COUNT(p)")
+	List<BloodGroupStats> getBloodGroupStats();
+	
+	@Transactional
+	@Modifying
+	@Query("UPDATE PatientEntity p SET p.name = :name WHERE p.id = :id")
+	int updatePatientNameById(@Param("id") Integer id, @Param("name") String name);
+}

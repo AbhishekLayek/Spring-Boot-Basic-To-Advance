@@ -1,0 +1,56 @@
+package com.spring.Projection;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.spring.Projection.dto.BloodGroupStats;
+import com.spring.Projection.dto.PatientInfoClass;
+import com.spring.Projection.dto.PatientInfoInterface;
+import com.spring.Projection.repositories.PatientRepository;
+
+@SpringBootTest
+class ProjectionApplicationTests {
+	
+	@Autowired
+	private PatientRepository patientRepository;
+	
+	@Test
+	void contextLoads() {
+	}
+	
+	/*@Test
+	void getPatientInfoInterface() {
+		List<PatientInfoInterface> patients = patientRepository.getPatientInfoInterface();
+		
+		for(PatientInfoInterface p: patients) {
+			System.out.println(p.getId() + " " + p.getName() + " " + p.getEmail());
+		}
+	} */
+	
+	@Test
+	void getPatientInfoClass() {
+		List<PatientInfoClass> patients = patientRepository.getPatientInfoClass();
+		
+		for(PatientInfoClass p: patients) {
+			System.out.println(p);
+		}
+	}
+	
+	@Test
+	void getBloodGroupStats() {
+		List<BloodGroupStats> bloodGroupStats = patientRepository.getBloodGroupStats();
+		
+		for(BloodGroupStats b: bloodGroupStats) {
+			System.out.println(b);
+		}
+	}
+	
+	@Test
+	void updatePatientNameById() {
+		int noOfRowsAffected = patientRepository.updatePatientNameById(1, "Raj Sharma");
+		System.out.println("Number Of Rows Affected: " + noOfRowsAffected);
+	}
+}

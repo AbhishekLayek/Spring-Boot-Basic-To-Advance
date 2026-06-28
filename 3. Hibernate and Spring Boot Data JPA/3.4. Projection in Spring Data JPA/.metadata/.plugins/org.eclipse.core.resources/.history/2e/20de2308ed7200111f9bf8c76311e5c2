@@ -1,0 +1,26 @@
+package com.spring.Projection;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.spring.Projection.dto.PatientDTOInterface;
+import com.spring.Projection.repositories.PatientRepository;
+
+@SpringBootTest
+class ProjectionApplicationTests {
+	
+	@Autowired
+	private PatientRepository patientRepository;
+	
+	@Test
+	void contextLoads() {
+	}
+	
+	@Test
+	void getProjectionDataInteface() {
+		
+	}
+}

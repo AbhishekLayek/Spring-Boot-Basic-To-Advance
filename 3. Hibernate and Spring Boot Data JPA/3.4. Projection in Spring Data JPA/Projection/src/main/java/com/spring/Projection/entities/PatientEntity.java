@@ -1,0 +1,40 @@
+package com.spring.Projection.entities;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import com.spring.Projection.entities.type.BloodGroupType;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "patients")
+public class PatientEntity {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String name;
+	private String gender;
+	private String email;
+	private LocalDate dateOfBirth;
+	
+	@Enumerated(value = EnumType.STRING)
+	private BloodGroupType bloodGroup;
+	
+	@CreationTimestamp
+	private LocalDateTime creationTime;
+}
