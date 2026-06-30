@@ -1,0 +1,13 @@
+package com.spring.HospitalManagementSystem;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.spring.HospitalManagementSystem.repositories.PatientRepository;
+
+@SpringBootTest
+public class PatientServiceTest {
+	
+	@Autowired
+	private PatientRepository patientRepository;
+}

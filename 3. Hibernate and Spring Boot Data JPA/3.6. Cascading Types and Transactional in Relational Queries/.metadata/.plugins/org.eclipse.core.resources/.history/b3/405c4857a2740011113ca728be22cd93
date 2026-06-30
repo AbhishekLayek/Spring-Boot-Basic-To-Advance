@@ -1,0 +1,5 @@
+package com.spring.HospitalManagementSystem.entities;
+
+public class Insurance {
+
+}

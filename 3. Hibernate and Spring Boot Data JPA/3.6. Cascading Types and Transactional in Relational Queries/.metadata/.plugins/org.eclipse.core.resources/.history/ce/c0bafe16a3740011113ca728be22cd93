@@ -1,0 +1,19 @@
+package com.spring.HospitalManagementSystem.entities;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import com.spring.HospitalManagementSystem.entities.type.BloodGroupType;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Appointment {
+
+}

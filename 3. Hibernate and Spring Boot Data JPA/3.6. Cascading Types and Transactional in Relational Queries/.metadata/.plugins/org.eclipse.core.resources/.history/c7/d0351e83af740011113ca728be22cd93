@@ -1,0 +1,18 @@
+package com.spring.HospitalManagementSystem;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.spring.HospitalManagementSystem.repositories.AppointmentRepository;
+import com.spring.HospitalManagementSystem.repositories.DoctorRepository;
+import com.spring.HospitalManagementSystem.repositories.InsuranceRepository;
+import com.spring.HospitalManagementSystem.repositories.PatientRepository;
+
+@SpringBootTest
+class HospitalManagementSystemApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+}

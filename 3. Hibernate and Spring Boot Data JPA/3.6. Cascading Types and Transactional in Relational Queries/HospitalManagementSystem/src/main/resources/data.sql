@@ -1,0 +1,23 @@
+INSERT INTO patient
+(name, gender, birth_date, email, blood_group, created_at)
+VALUES
+('Rahul Kumar', 'Male', '1998-05-12', 'rahul.kumar@gmail.com', 'A_POSITIVE', NOW()),
+('Anjali Sharma', 'Female', '1996-08-20', 'anjali.sharma@gmail.com', 'B_POSITIVE', NOW()),
+('Rohan Patel', 'Male', '1994-11-15', 'rohan.patel@gmail.com', 'O_POSITIVE', NOW()),
+('Neha Gupta', 'Female', '2000-01-09', 'neha.gupta@gmail.com', 'AB_POSITIVE', NOW()),
+('Arjun Reddy', 'Male', '1997-07-28', 'arjun.reddy@gmail.com', 'O_NEGATIVE', NOW());
+
+
+INSERT INTO doctor (name, specialization, email, created_at) VALUES
+('Dr. Rajesh Sharma', 'Cardiology', 'rajesh.sharma@gmail.com', NOW()),
+('Dr. Priya Nair', 'Neurology', 'priya.nair@gmail.com', NOW()),
+('Dr. Amit Verma', 'Orthopedics', 'amit.verma@gmail.com', NOW()),
+('Dr. Sneha Reddy', 'Pediatrics', 'sneha.reddy@gmail.com', NOW()),
+('Dr. Vikram Singh', 'Dermatology', 'vikram.singh@gmail.com', NOW());
+
+INSERT INTO department (name, created_at, head_doctor_id) VALUES
+('Cardiology', NOW(), 1),
+('Neurology', NOW(), 2),
+('Orthopedics', NOW(), 3),
+('Pediatrics', NOW(), 4),
+('Dermatology', NOW(), 5);

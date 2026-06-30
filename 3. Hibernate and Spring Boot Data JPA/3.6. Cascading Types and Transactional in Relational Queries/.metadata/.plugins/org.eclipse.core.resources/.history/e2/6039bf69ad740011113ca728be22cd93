@@ -1,0 +1,5 @@
+package com.spring.HospitalManagementSystem.services;
+
+public class AppointmentService {
+
+}

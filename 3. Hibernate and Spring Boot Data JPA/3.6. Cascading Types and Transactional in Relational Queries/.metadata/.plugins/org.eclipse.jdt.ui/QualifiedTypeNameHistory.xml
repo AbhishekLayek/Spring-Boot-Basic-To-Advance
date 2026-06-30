@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.entities.type.BloodGroupType"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Enumerated"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.CreationTimestamp"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToOne"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.ManyToMany"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.entities.Department"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="lombok.Builder"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="lombok.RequiredArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.entities.Patient"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.entities.Doctor"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
+    <fullyQualifiedTypeName name="jakarta.transaction.Transactional"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.repositories.PatientRepository"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.repositories.DoctorRepository"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.repositories.InsuranceRepository"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.repositories.AppointmentRepository"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.services.PatientService"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.services.InsuranceService"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.entities.Insurance"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.test.context.SpringBootTest"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.services.AppointmentService"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
+    <fullyQualifiedTypeName name="com.spring.HospitalManagementSystem.entities.Appointment"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+</qualifiedTypeNameHistroy>

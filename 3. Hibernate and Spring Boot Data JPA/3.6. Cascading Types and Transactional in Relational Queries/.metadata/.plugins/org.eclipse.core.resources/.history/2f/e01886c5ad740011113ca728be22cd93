@@ -1,0 +1,20 @@
+package com.spring.HospitalManagementSystem.services;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.HospitalManagementSystem.entities.Appointment;
+import com.spring.HospitalManagementSystem.repositories.DoctorRepository;
+import com.spring.HospitalManagementSystem.repositories.PatientRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class AppointmentService {
+	private final PatientRepository patientRepository;
+	private final DoctorRepository doctorRepository;
+	
+	public void addAppointment(Long patientId, Long doctorId, Appointment appointment) {
+		
+	}
+}
