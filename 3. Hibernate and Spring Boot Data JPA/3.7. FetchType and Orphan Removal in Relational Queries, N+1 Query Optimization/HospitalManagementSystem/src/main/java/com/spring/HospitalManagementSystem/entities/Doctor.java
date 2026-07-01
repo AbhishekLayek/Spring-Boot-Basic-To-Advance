@@ -1,0 +1,48 @@
+package com.spring.HospitalManagementSystem.entities;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+public class Doctor {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(nullable = false, length = 40)
+	private String name;
+	
+	@Column(nullable = false, length = 50)
+	private String specialization;
+	
+	@Column(nullable = false,unique = true ,length = 50)
+	private String email;
+	
+	@CreationTimestamp
+	@Column(nullable = false, updatable = false)
+	private LocalDateTime createdAt;
+	
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
+	private List<Appointment> appointments = new ArrayList<>(); // Inverse Side, Parent Side
+	
+	@ManyToMany(mappedBy = "doctors")
+	private List<Department> departments = new ArrayList<>(); // Inverse Side, Parent Side
+}
