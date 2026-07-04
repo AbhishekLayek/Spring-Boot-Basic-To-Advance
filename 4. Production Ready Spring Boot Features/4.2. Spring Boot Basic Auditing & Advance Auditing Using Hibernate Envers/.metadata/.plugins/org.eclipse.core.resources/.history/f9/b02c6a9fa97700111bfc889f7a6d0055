@@ -1,0 +1,7 @@
+package com.spring.Auditing.advices;
+
+import lombok.Data;
+
+@Data
+public class ApiError {
+}

@@ -1,0 +1,11 @@
+package com.spring.Auditing.services;
+
+import org.springframework.http.ResponseEntity;
+
+import com.spring.Auditing.dto.PostDTO;
+
+public interface PostService {
+
+	ResponseEntity<PostDTO> getAllPosts();
+
+}

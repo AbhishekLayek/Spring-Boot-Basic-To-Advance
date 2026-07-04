@@ -1,0 +1,12 @@
+package com.spring.Auditing.services;
+
+import java.util.List;
+import com.spring.Auditing.dto.PostDTO;
+
+public interface PostService {
+
+	List<PostDTO> getAllPosts();
+
+	PostDTO getPostById(Long id);
+
+}

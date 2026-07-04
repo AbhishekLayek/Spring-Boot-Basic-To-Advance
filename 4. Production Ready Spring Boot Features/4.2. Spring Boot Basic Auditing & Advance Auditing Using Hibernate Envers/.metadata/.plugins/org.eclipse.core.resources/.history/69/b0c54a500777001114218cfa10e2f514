@@ -1,0 +1,9 @@
+package com.spring.Auditing.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.spring.Auditing.entities.PostEntity;
+
+public interface PostRepository extends JpaRepository<PostEntity, Long>{
+
+}

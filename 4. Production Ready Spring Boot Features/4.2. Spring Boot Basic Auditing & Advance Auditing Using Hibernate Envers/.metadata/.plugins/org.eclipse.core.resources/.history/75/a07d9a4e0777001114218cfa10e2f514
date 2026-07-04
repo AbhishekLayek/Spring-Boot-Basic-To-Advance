@@ -1,0 +1,5 @@
+package com.spring.Auditing.repositories;
+
+public interface PostRepository {
+
+}

@@ -1,0 +1,5 @@
+package com.spring.Auditing.advices;
+
+public class ApiError {
+
+}

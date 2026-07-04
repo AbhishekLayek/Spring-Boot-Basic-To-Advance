@@ -1,0 +1,22 @@
+package com.spring.Auditing.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PostDTO {
+	private Long id;
+	
+	@NotBlank(message = "Title Cannot Be Blank")
+	@Size(min = 1, max = 100, message = "Maximum Characters Are Allowed For Title Is 100")
+	private String title;
+	
+	@NotBlank(message = "Description Cannot Be Blank")
+	@Size(min = 1, max = 1000, message = "Maximum Characters Are Allowed For Description Is 1000")
+	private String description;
+}
