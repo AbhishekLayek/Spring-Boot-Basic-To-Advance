@@ -1,0 +1,5 @@
+package com.spring.Auditing.auth;
+
+public class AuditorAwareImpl {
+
+}

@@ -3,8 +3,9 @@ package com.spring.Auditing.services;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import com.spring.Auditing.configs.ModelMapperConfig;
 import com.spring.Auditing.dto.PostDTO;
 import com.spring.Auditing.entities.PostEntity;
 import com.spring.Auditing.repositories.PostRepository;
@@ -14,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PostServiceImpl implements PostService{
 	private final PostRepository postRepository;
-	private final ModelMapperConfig modelMapper;
+	private final ModelMapper modelMapper;
 
 	@Override
 	public List<PostDTO> getAllPosts() {

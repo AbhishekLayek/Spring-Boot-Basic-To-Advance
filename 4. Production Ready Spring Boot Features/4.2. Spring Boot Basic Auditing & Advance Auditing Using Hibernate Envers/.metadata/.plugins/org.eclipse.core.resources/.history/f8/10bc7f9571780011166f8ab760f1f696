@@ -1,0 +1,5 @@
+package com.spring.Auditing.entities;
+
+public class AuditableEntity {
+
+}

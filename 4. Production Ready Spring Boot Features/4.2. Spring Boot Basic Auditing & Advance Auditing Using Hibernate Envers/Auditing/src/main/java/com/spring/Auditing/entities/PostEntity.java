@@ -1,5 +1,6 @@
 package com.spring.Auditing.entities;
 
+import org.hibernate.envers.Audited;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "posts")
-public class PostEntity {
+@Audited
+public class PostEntity extends AuditableEntity{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

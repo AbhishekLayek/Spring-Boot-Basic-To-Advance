@@ -1,0 +1,5 @@
+package com.spring.Auditing.controllers;
+
+public class AuditController {
+
+}
