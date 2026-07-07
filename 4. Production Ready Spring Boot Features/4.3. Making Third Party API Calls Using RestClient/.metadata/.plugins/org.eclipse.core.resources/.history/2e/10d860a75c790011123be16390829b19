@@ -1,0 +1,5 @@
+package com.spring.RestClient.repositories;
+
+public interface PostRepository {
+
+}

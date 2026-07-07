@@ -1,0 +1,5 @@
+package com.spring.RestClient.dto;
+
+public class PostDTO {
+
+}

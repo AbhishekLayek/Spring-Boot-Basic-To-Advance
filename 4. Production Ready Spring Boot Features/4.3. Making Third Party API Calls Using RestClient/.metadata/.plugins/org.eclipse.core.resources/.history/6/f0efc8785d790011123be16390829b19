@@ -1,0 +1,5 @@
+package com.spring.RestClient.exceptions;
+
+public class ResourceNotFoundException {
+
+}

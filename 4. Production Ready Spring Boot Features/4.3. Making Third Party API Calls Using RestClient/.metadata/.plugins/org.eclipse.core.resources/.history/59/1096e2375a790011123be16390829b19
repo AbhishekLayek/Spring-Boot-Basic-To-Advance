@@ -1,0 +1,5 @@
+package com.spring.RestClient.entities;
+
+public class PostEntity {
+
+}

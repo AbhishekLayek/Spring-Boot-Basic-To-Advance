@@ -1,0 +1,11 @@
+package com.spring.RestClient.services;
+
+import org.springframework.http.ResponseEntity;
+
+import com.spring.RestClient.dto.PostDTO;
+
+public interface PostService {
+
+	PostDTO createPost(PostDTO postDTO);
+
+}

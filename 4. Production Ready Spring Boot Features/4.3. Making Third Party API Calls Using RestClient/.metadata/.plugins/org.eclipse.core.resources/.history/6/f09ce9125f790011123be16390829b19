@@ -1,0 +1,14 @@
+package com.spring.RestClient.services;
+
+import org.jspecify.annotations.Nullable;
+
+import com.spring.RestClient.dto.PostDTO;
+
+public interface PostService {
+
+	PostDTO createPost(PostDTO postDTO);
+
+	@Nullable
+	PostDTO getPostById(Long id);
+
+}
