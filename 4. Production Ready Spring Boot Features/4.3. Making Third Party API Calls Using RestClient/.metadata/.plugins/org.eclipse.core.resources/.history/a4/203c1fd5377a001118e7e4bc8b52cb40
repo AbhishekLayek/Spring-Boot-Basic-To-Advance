@@ -1,0 +1,48 @@
+package com.spring.RestClient.dto;
+
+import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.Digits;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class EmployeeDTO {
+	private Integer id;
+	
+	@NotBlank(message = "Name Cannot Be Blank")
+	@Size(min = 3, max = 20, message = "Name Must Be Within 3-20 Characters")
+	private String name;
+	
+	@NotBlank(message = "Email Cannot Be Blank")
+	@Email(message = "Please Provide Valid Email")
+	private String email;
+	
+	@Min(value = 18, message = "Minimum Age Is 18")
+	@Max(value = 80, message = "Maximum Age Is 80")
+	private Integer age;
+	
+	@NotBlank(message = "Designation Cannot Be Blank")
+	@EmployeeRoleValidation
+	private String designation;
+	
+	@PastOrPresent(message = "Date Of Joining Must Be In Past Or Present Date")
+	private LocalDate dateOfJoining;
+	
+	@Digits(integer = 6, fraction = 2, message = "Maximum Salary Will Be Of 6 Digits")
+	private Double salary;
+	
+	@JsonProperty(defaultValue = "isActive")
+	@AssertTrue(message = "Employees Status Should Be Active")
+	private Boolean isActive;
+}

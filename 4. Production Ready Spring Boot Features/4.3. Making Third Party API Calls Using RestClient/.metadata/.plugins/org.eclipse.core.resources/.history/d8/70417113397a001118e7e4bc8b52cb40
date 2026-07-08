@@ -1,0 +1,7 @@
+package com.spring.RestClient.clients;
+
+import com.spring.RestClient.dto.EmployeeDTO;
+
+public interface EmployeeClient {
+	EmployeeDTO createEmployee(EmployeeDTO employeeDTO);
+}

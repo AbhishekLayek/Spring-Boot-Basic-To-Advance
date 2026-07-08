@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 public class ApiResponse<T> {
-	@JsonFormat(pattern = "dd-MM-yyyy hh:mm:ss")
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
 	private LocalDateTime timestamp;
 	private T data;
 	private ApiError error;

@@ -1,0 +1,7 @@
+package com.spring.RestClient.clients.Impl;
+
+import com.spring.RestClient.clients.EmployeeClient;
+
+public class EmployeeClientImpl implements EmployeeClient{
+
+}

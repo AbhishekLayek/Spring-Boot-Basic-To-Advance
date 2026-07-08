@@ -1,0 +1,6 @@
+package com.spring.RestClient.clients;
+
+public interface EmployeeClient {
+	
+	
+}

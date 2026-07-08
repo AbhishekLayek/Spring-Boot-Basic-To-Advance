@@ -1,0 +1,50 @@
+org.springframework.web.client.RestClientException: Error while extracting response for type [com.spring.RestClient.advices.ApiResponse<java.util.List<com.spring.RestClient.dto.EmployeeDTO>>] and content type [application/json]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:274)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:931)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$toEntityInternal$0(DefaultRestClient.java:871)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:617)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:866)
+	at com.spring.RestClient.clients.Impl.EmployeeClientImpl.getAllEmployees(EmployeeClientImpl.java:63)
+	at com.spring.RestClient.RestClientApplicationTests.getAllEmployeesTest(RestClientApplicationTests.java:42)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.time.LocalDateTime` from String "08-07-2026 01:50:52": Failed to deserialize `java.time.LocalDateTime` (with format 'Value(DayOfMonth,2)'-'Value(MonthOfYear,2)'-'Value(YearOfEra,4,19,EXCEEDS_PAD)' 'Value(ClockHourOfAmPm,2)':'Value(MinuteOfHour,2)':'Value(SecondOfMinute,2)'): (java.time.format.DateTimeParseException) Text '08-07-2026 01:50:52' could not be parsed: Unable to obtain LocalDateTime from TemporalAccessor: {MilliOfSecond=0, MinuteOfHour=50, HourOfAmPm=1, NanoOfSecond=0, MicroOfSecond=0, SecondOfMinute=52},ISO resolved to 2026-07-08 of type java.time.format.Parsed
+	at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:363)
+	at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.read(AbstractJacksonHttpMessageConverter.java:319)
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:246)
+	... 10 more
+Caused by: tools.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.time.LocalDateTime` from String "08-07-2026 01:50:52": Failed to deserialize `java.time.LocalDateTime` (with format 'Value(DayOfMonth,2)'-'Value(MonthOfYear,2)'-'Value(YearOfEra,4,19,EXCEEDS_PAD)' 'Value(ClockHourOfAmPm,2)':'Value(MinuteOfHour,2)':'Value(SecondOfMinute,2)'): (java.time.format.DateTimeParseException) Text '08-07-2026 01:50:52' could not be parsed: Unable to obtain LocalDateTime from TemporalAccessor: {MilliOfSecond=0, MinuteOfHour=50, HourOfAmPm=1, NanoOfSecond=0, MicroOfSecond=0, SecondOfMinute=52},ISO resolved to 2026-07-08 of type java.time.format.Parsed
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #195] (through reference chain: com.spring.RestClient.advices.ApiResponse["timestamp"])
+	at tools.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:37)
+	at tools.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:2063)
+	at tools.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:1354)
+	at tools.jackson.databind.ext.javatime.deser.JSR310DeserializerBase._handleDateTimeFormatException(JSR310DeserializerBase.java:179)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:228)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:105)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer.deserialize(LocalDateTimeDeserializer.java:38)
+	at tools.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:120)
+	at tools.jackson.databind.deser.bean.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:659)
+	at tools.jackson.databind.deser.bean.BeanDeserializer.deserialize(BeanDeserializer.java:200)
+	at tools.jackson.databind.deser.DeserializationContextExt.readRootValue(DeserializationContextExt.java:266)
+	at tools.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1888)
+	at tools.jackson.databind.ObjectReader.readValue(ObjectReader.java:1270)
+	at org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:352)
+	... 12 more
+Caused by: java.time.format.DateTimeParseException: Text '08-07-2026 01:50:52' could not be parsed: Unable to obtain LocalDateTime from TemporalAccessor: {MilliOfSecond=0, MinuteOfHour=50, HourOfAmPm=1, NanoOfSecond=0, MicroOfSecond=0, SecondOfMinute=52},ISO resolved to 2026-07-08 of type java.time.format.Parsed
+	at java.base/java.time.format.DateTimeFormatter.createError(DateTimeFormatter.java:2079)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2014)
+	at java.base/java.time.LocalDateTime.parse(LocalDateTime.java:496)
+	at tools.jackson.databind.ext.javatime.deser.LocalDateTimeDeserializer._fromString(LocalDateTimeDeserializer.java:226)
+	... 21 more
+Caused by: java.time.DateTimeException: Unable to obtain LocalDateTime from TemporalAccessor: {MilliOfSecond=0, MinuteOfHour=50, HourOfAmPm=1, NanoOfSecond=0, MicroOfSecond=0, SecondOfMinute=52},ISO resolved to 2026-07-08 of type java.time.format.Parsed
+	at java.base/java.time.LocalDateTime.from(LocalDateTime.java:465)
+	at java.base/java.time.format.Parsed.query(Parsed.java:247)
+	at java.base/java.time.format.DateTimeFormatter.parse(DateTimeFormatter.java:2010)
+	... 23 more
+Caused by: java.time.DateTimeException: Unable to obtain LocalTime from TemporalAccessor: {MilliOfSecond=0, MinuteOfHour=50, HourOfAmPm=1, NanoOfSecond=0, MicroOfSecond=0, SecondOfMinute=52},ISO resolved to 2026-07-08 of type java.time.format.Parsed
+	at java.base/java.time.LocalTime.from(LocalTime.java:443)
+	at java.base/java.time.LocalDateTime.from(LocalDateTime.java:461)
+	... 25 more
+

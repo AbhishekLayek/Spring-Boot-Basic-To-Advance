@@ -1,0 +1,5 @@
+package com.spring.RestClient.clients.Impl;
+
+public class EmployeeClientImpl {
+
+}

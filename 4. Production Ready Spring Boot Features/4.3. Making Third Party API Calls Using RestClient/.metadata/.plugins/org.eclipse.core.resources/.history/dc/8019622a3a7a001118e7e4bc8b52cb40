@@ -1,0 +1,14 @@
+package com.spring.RestClient.clients.Impl;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClient;
+
+import com.spring.RestClient.clients.EmployeeClient;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class EmployeeClientImpl implements EmployeeClient{
+	private final RestClient restClient;
+}
