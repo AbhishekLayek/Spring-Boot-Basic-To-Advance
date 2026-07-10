@@ -1,0 +1,72 @@
+2026-07-10 22:45:37 INFO  o.h.v.i.u.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-10 22:45:37 INFO  c.s.L.LoggingApplicationTests - Starting LoggingApplicationTests using Java 25.0.3 with PID 19956 (started by Dell in D:\Spring Boot\4. Production Ready Spring Boot Features\4.4. Logging in Spring Boot Applications\Logging)
+2026-07-10 22:45:37 INFO  c.s.L.LoggingApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-07-10 22:45:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-10 22:45:38 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interface.
+2026-07-10 22:45:39 INFO  o.h.o.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-10 22:45:39 INFO  o.h.o.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-10 22:45:39 INFO  o.h.e.b.i.EnversServiceImpl - Envers integration enabled? : true
+2026-07-10 22:45:40 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-10 22:45:40 INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2026-07-10 22:45:40 INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18f4086e
+2026-07-10 22:45:40 INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-10 22:45:40 INFO  o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-10 22:45:40 INFO  o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.Logging.entities.PostEntity
+2026-07-10 22:45:42 INFO  o.h.o.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-10 22:45:42 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-10 22:45:42 INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-10 22:45:43 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-10 22:45:44 INFO  c.s.L.LoggingApplicationTests - Started LoggingApplicationTests in 7.726 seconds (process running for 9.934)
+2026-07-10 22:45:45 INFO  c.s.L.c.I.EmployeeRestClientImpl - Employee Created Successfully
+2026-07-10 22:45:46 INFO  c.s.L.c.I.EmployeeRestClientImpl - Employee With Id 1 Successfully Retrieved
+2026-07-10 22:45:46 INFO  c.s.L.c.I.EmployeeRestClientImpl - All Employees Successfully Retrieved
+2026-07-10 22:45:46 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-10 22:45:46 INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-10 22:45:46 INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-07-10 22:49:49 INFO  o.h.v.i.u.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-10 22:49:49 INFO  c.s.L.LoggingApplicationTests - Starting LoggingApplicationTests using Java 25.0.3 with PID 28588 (started by Dell in D:\Spring Boot\4. Production Ready Spring Boot Features\4.4. Logging in Spring Boot Applications\Logging)
+2026-07-10 22:49:49 INFO  c.s.L.LoggingApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-07-10 22:49:50 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-10 22:49:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 80 ms. Found 1 JPA repository interface.
+2026-07-10 22:49:52 INFO  o.h.o.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-10 22:49:52 INFO  o.h.o.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-10 22:49:52 INFO  o.h.e.b.i.EnversServiceImpl - Envers integration enabled? : true
+2026-07-10 22:49:52 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-10 22:49:52 INFO  c.z.h.HikariDataSource - HikariPool-1 - Starting...
+2026-07-10 22:49:53 INFO  c.z.h.p.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@631678e6
+2026-07-10 22:49:53 INFO  c.z.h.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-10 22:49:53 INFO  o.h.o.c.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-10 22:49:53 INFO  o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.Logging.entities.PostEntity
+2026-07-10 22:49:54 INFO  o.h.o.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-10 22:49:55 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-10 22:49:55 INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-10 22:49:55 WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-10 22:49:56 INFO  c.s.L.LoggingApplicationTests - Started LoggingApplicationTests in 7.638 seconds (process running for 9.796)
+2026-07-10 22:49:58 INFO  c.s.L.c.I.EmployeeRestClientImpl - Employee Created Successfully
+2026-07-10 22:49:58 INFO  c.s.L.c.I.EmployeeRestClientImpl - Employee With Id 1 Successfully Retrieved
+2026-07-10 22:49:59 INFO  c.s.L.c.I.EmployeeRestClientImpl - All Employees Successfully Retrieved
+2026-07-10 22:49:59 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-10 22:49:59 INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-10 22:49:59 INFO  c.z.h.HikariDataSource - HikariPool-1 - Shutdown completed.

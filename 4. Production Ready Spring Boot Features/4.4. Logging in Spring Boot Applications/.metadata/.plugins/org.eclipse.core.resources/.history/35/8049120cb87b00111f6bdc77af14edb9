@@ -1,0 +1,5 @@
+package com.spring.Logging.entities;
+
+public class PostEntity {
+
+}

@@ -1,0 +1,5 @@
+package com.spring.Logging.dto;
+
+public class PostDTO {
+
+}

@@ -1,0 +1,5 @@
+package com.spring.Logging.clients.Impl;
+
+public class EmployeeRestClientImpl {
+
+}

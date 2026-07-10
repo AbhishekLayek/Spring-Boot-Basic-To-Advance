@@ -1,0 +1,17 @@
+java.lang.RuntimeException: {"data":null,"error":{"message":"Request method 'POST' is not supported","status":"500 INTERNAL_SERVER_ERROR","subErrors":null},"timestamp":"10-07-2026 12:43:38"}
+	at com.spring.Logging.configs.RestClientConfig.lambda$1(RestClientConfig.java:29)
+	at org.springframework.web.client.StatusHandler.handle(StatusHandler.java:75)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.applyStatusHandlers(DefaultRestClient.java:943)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$readBody$0(DefaultRestClient.java:932)
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:224)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:931)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$toEntityInternal$0(DefaultRestClient.java:871)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:617)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntityInternal(DefaultRestClient.java:870)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.toEntity(DefaultRestClient.java:866)
+	at com.spring.Logging.clients.Impl.EmployeeRestClientImpl.getEmployeeById(EmployeeRestClientImpl.java:46)
+	at com.spring.Logging.LoggingApplicationTests.getEmployeeByIdTest(LoggingApplicationTests.java:42)
+

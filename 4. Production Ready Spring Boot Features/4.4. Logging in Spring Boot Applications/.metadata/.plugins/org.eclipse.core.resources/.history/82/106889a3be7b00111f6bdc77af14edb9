@@ -1,0 +1,25 @@
+package com.spring.Logging.services.Impl;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.spring.Logging.dto.PostDTO;
+import com.spring.Logging.entities.PostEntity;
+import com.spring.Logging.repositories.PostRepository;
+import com.spring.Logging.services.PostService;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PostServiceImpl implements PostService{
+	private final PostRepository postRepository;
+	private final ModelMapper modelMapper;
+	
+	@Override
+	public PostDTO createPost(PostDTO postDTO) {
+		PostEntity postEntity = postRepository.save(modelMapper.map(postDTO, PostEntity.class));
+		
+		return modelMapper.map(postEntity, PostDTO.class);
+	}
+}

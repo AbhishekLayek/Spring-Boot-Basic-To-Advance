@@ -1,0 +1,5 @@
+package com.spring.Logging.exceptions;
+
+public class ResourceNotFoundException {
+
+}

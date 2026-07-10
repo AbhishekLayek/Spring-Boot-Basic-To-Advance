@@ -1,0 +1,53 @@
+package com.spring.Logging;
+
+import java.time.LocalDate;
+
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.spring.Logging.clients.EmployeeRestClient;
+import com.spring.Logging.dto.EmployeeDTO;
+
+@SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+class LoggingApplicationTests {
+
+	@Autowired
+	private EmployeeRestClient employeeClient;
+
+	@Test
+	@Order(1)
+	void createEmployeeTest() {
+		EmployeeDTO employeeDTO = EmployeeDTO
+				.builder()
+				.name("Abhishek")
+				.email("abhisheklayek57@gmail.com")
+				.age(24)
+				.designation("Developer")
+				.dateOfJoining(LocalDate.of(2024, 4, 14))
+				.salary(28000.00)
+				.isActive(true)
+				.build();
+		
+		System.out.println(employeeClient.createEmployee(employeeDTO));
+	}
+	
+	@Test
+	@Order(2)
+	void getEmployeeByIdTest() {
+		System.out.println(employeeClient.getEmployeeById(1));
+	}
+	
+	@Test
+	@Order(3)
+	void getAllEmployeesTest() {
+		employeeClient.getAllEmployees().stream().forEach(employeeDTO ->{
+			System.out.println(employeeDTO);
+		});
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.spring.Logging.services.Impl;
+
+public class PostServiceImpl {
+
+}

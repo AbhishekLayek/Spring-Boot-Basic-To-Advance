@@ -1,0 +1,5 @@
+package com.spring.Logging.repositories;
+
+public interface PostRepository {
+
+}

@@ -1,0 +1,7 @@
+package com.spring.Logging.clients.Impl;
+
+import com.spring.Logging.clients.EmployeeRestClient;
+
+public class EmployeeRestClientImpl implements EmployeeRestClient{
+
+}

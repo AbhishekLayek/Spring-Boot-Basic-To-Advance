@@ -1,0 +1,47 @@
+package com.spring.Logging.clients.Impl;
+
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestClient;
+
+import com.spring.Logging.advices.ApiResponse;
+import com.spring.Logging.clients.EmployeeRestClient;
+import com.spring.Logging.dto.EmployeeDTO;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class EmployeeRestClientImpl implements EmployeeRestClient{
+	
+	private final RestClient restClient;
+	
+	@Override
+	public EmployeeDTO createEmployee(EmployeeDTO employeeDTO) {
+		ResponseEntity<ApiResponse<EmployeeDTO>> employeeApiResponseEntity = restClient
+				.post()
+				.uri("/employees/add")
+				.body(employeeDTO)
+				.retrieve()
+				.onStatus(HttpStatus::is4xxClientError,(req,res)->{
+					throw new RuntimeException("Employee Not Created");
+				})
+				.toEntity(new ParameterizedTypeReference<T>() {
+				});
+	}
+
+	@Override
+	public EmployeeDTO getEmployeeById(Integer id) {
+		return null;
+	}
+
+	@Override
+	public List<EmployeeDTO> getAllEmployees() {
+		return null;
+	}
+
+}
