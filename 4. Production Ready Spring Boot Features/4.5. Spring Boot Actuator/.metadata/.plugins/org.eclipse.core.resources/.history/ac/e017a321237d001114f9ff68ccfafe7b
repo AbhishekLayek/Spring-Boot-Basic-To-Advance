@@ -1,0 +1,9 @@
+package com.spring.Actuator.services;
+
+import com.spring.Actuator.dto.PostDTO;
+
+public interface PostService {
+
+	PostDTO createPost(PostDTO postDTO);
+
+}

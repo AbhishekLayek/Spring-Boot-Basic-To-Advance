@@ -1,0 +1,5 @@
+package com.spring.Actuator.advices;
+
+public class ApiResponse {
+
+}

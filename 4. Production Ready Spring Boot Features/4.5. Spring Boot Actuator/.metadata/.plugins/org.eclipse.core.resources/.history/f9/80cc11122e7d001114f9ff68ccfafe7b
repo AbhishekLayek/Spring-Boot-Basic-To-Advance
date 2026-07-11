@@ -1,0 +1,5 @@
+package com.spring.Actuator.clients.Impl;
+
+public class EmployeeRestClientImpl {
+
+}

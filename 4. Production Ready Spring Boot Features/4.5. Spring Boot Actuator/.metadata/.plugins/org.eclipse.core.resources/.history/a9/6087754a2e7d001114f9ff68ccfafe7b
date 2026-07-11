@@ -1,0 +1,5 @@
+package com.spring.Actuator.clients;
+
+public interface EmployeeRestClient {
+
+}

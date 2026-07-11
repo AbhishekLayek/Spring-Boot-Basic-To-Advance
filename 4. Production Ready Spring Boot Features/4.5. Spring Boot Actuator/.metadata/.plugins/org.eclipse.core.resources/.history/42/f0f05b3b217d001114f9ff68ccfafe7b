@@ -1,0 +1,5 @@
+package com.spring.Actuator.configs;
+
+public class AppConfig {
+
+}

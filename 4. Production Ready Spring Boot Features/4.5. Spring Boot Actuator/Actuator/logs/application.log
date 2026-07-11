@@ -1,0 +1,97 @@
+2026-07-11 19:54:14.186 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-11 19:54:14.230 INFO  [main] c.s.A.ActuatorApplicationTests - Starting ActuatorApplicationTests using Java 25.0.3 with PID 28976 (started by Dell in D:\Spring Boot\4. Production Ready Spring Boot Features\4.5. Spring Boot Actuator\Actuator)
+2026-07-11 19:54:14.233 INFO  [main] c.s.A.ActuatorApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2026-07-11 19:54:15.735 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-11 19:54:15.835 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 1 JPA repository interface.
+2026-07-11 19:54:17.097 INFO  [main] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-11 19:54:17.196 INFO  [main] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-11 19:54:17.624 INFO  [main] o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-07-11 19:54:17.892 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-11 19:54:17.937 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-11 19:54:18.182 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@770cbe5d
+2026-07-11 19:54:18.185 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-11 19:54:18.309 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-11 19:54:18.625 INFO  [main] o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.Actuator.entities.PostEntity
+2026-07-11 19:54:19.779 INFO  [main] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-11 19:54:20.119 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-11 19:54:20.606 INFO  [main] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-11 19:54:20.991 WARN  [main] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-11 19:54:22.133 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 12 endpoints beneath base path '/actuator'
+2026-07-11 19:54:22.273 INFO  [main] c.s.A.ActuatorApplicationTests - Started ActuatorApplicationTests in 8.701 seconds (process running for 10.703)
+2026-07-11 19:54:22.964 TRACE [main] c.s.A.c.Impl.EmployeeRestClientImpl - Trying To Create New Employee
+2026-07-11 19:54:24.060 INFO  [main] c.s.A.c.Impl.EmployeeRestClientImpl - Employee Created Successfully
+2026-07-11 19:54:24.060 TRACE [main] c.s.A.c.Impl.EmployeeRestClientImpl - Created Employee EmployeeDTO(id=1, name=Abhishek, email=abhisheklayek57@gmail.com, age=24, designation=Developer, dateOfJoining=2024-04-14, salary=28000.0, isActive=true)
+2026-07-11 19:54:24.084 TRACE [main] c.s.A.c.Impl.EmployeeRestClientImpl - Trying To Retrieve Employee With Id 1
+2026-07-11 19:54:24.183 INFO  [main] c.s.A.c.Impl.EmployeeRestClientImpl - Successfully Retrieved Employee With Id 1
+2026-07-11 19:54:24.183 TRACE [main] c.s.A.c.Impl.EmployeeRestClientImpl - Retrieved Employee EmployeeDTO(id=1, name=Abhishek, email=abhisheklayek57@gmail.com, age=24, designation=Developer, dateOfJoining=2024-04-14, salary=28000.0, isActive=true)
+2026-07-11 19:54:24.194 TRACE [main] c.s.A.c.Impl.EmployeeRestClientImpl - Trying To Retrieve All Employees
+2026-07-11 19:54:24.538 INFO  [main] c.s.A.c.Impl.EmployeeRestClientImpl - All Employees Retrieved Successfully
+2026-07-11 19:54:24.538 TRACE [main] c.s.A.c.Impl.EmployeeRestClientImpl - Retrieved Employees [EmployeeDTO(id=1, name=Abhishek, email=abhisheklayek57@gmail.com, age=24, designation=Developer, dateOfJoining=2024-04-14, salary=28000.0, isActive=true)]
+2026-07-11 19:54:24.575 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-11 19:54:24.581 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-11 19:54:24.602 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-07-11 19:56:37.544 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-11 19:56:37.597 INFO  [restartedMain] c.s.Actuator.ActuatorApplication - Starting ActuatorApplication using Java 25.0.3 with PID 21852 (D:\Spring Boot\4. Production Ready Spring Boot Features\4.5. Spring Boot Actuator\Actuator\target\classes started by Dell in D:\Spring Boot\4. Production Ready Spring Boot Features\4.5. Spring Boot Actuator\Actuator)
+2026-07-11 19:56:37.599 INFO  [restartedMain] c.s.Actuator.ActuatorApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-11 19:56:37.671 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-11 19:56:37.671 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-11 19:56:39.136 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-11 19:56:39.202 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2026-07-11 19:56:40.021 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9000 (http)
+2026-07-11 19:56:40.036 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9000"]
+2026-07-11 19:56:40.039 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-11 19:56:40.039 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-11 19:56:40.099 INFO  [restartedMain] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2427 ms
+2026-07-11 19:56:40.411 INFO  [restartedMain] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-11 19:56:40.500 INFO  [restartedMain] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-11 19:56:40.804 INFO  [restartedMain] o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-07-11 19:56:41.057 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-11 19:56:41.100 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-11 19:56:41.297 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35e6e5fd
+2026-07-11 19:56:41.301 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-11 19:56:41.409 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-11 19:56:41.692 INFO  [restartedMain] o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.Actuator.entities.PostEntity
+2026-07-11 19:56:42.721 INFO  [restartedMain] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-11 19:56:42.948 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-11 19:56:43.291 INFO  [restartedMain] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-11 19:56:43.506 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-11 19:56:44.129 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver - Exposing 12 endpoints beneath base path '/actuator'
+2026-07-11 19:56:44.235 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9000"]
+2026-07-11 19:56:44.250 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9000 (http) with context path '/'
+2026-07-11 19:56:44.264 INFO  [restartedMain] c.s.Actuator.ActuatorApplication - Started ActuatorApplication in 7.499 seconds (process running for 8.526)
+2026-07-11 19:56:44.817 INFO  [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-11 19:56:44.818 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-07-11 19:56:44.820 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-07-11 19:57:49.166 WARN  [http-nio-9000-exec-6] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-07-11 19:59:01.652 WARN  [http-nio-9000-exec-3] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-07-11 19:59:47.739 WARN  [http-nio-9000-exec-8] o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico for request '/favicon.ico'.]
+2026-07-11 20:00:14.871 INFO  [RMI TCP Connection(15)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-07-11 20:00:14.880 INFO  [RMI TCP Connection(15)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-11 20:00:14.882 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9000"]
+2026-07-11 20:00:14.891 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-07-11 20:00:14.892 INFO  [RMI TCP Connection(15)-127.0.0.1] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9000"]
+2026-07-11 20:00:14.904 INFO  [RMI TCP Connection(15)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-11 20:00:14.911 INFO  [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-11 20:00:14.926 INFO  [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

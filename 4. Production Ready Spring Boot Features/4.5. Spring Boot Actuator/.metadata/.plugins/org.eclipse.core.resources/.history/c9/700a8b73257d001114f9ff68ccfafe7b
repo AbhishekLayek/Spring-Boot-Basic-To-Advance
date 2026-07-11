@@ -1,0 +1,43 @@
+package com.spring.Actuator.services.Impl;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.spring.Actuator.dto.PostDTO;
+import com.spring.Actuator.entities.PostEntity;
+import com.spring.Actuator.repositories.PostRepository;
+import com.spring.Actuator.services.PostService;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PostServiceImpl implements PostService{
+	private final PostRepository postRepository;
+	private final ModelMapper modelMapper;
+	
+	@Override
+	public PostDTO createPost(PostDTO postDTO) {
+		PostEntity postEntity = postRepository.save(modelMapper.map(postDTO, PostEntity.class));
+		return modelMapper.map(postEntity, PostDTO.class);
+	}
+
+	@Override
+	public Optional<PostDTO> getPostById(Long id) {
+		return postRepository.findById(id).map(postEntity -> modelMapper.map(postEntity, PostDTO.class));
+	}
+
+	@Override
+	public List<PostDTO> getPostById() {
+		return postRepository.findAll().stream().map(PostEntity -> modelMapper.map(PostEntity, PostDTO.class)).collect(Collectors.toList());
+	}
+
+	@Override
+	public PostDTO updatePost(Long id, PostDTO postDTO) {
+		validatePostExistance(id);
+	}
+}
