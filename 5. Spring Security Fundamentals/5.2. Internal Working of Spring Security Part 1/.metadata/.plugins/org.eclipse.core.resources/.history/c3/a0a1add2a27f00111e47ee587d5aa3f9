@@ -1,0 +1,25 @@
+package com.spring.SecurityApp.controllers;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.SecurityApp.dto.PostDTO;
+import com.spring.SecurityApp.services.PostService;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/posts")
+@RequiredArgsConstructor
+public class PostController {
+	private final PostService postService;
+	
+	@PostMapping("/add")
+	public ResponseEntity<PostDTO> createPost(@RequestBody PostDTO postDTO){
+		return new ResponseEntity<>(postService.createPost(postDTO), HttpStatus.CREATED);
+	}
+}

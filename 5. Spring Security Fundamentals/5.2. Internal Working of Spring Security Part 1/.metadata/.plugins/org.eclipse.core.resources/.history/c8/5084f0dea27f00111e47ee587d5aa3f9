@@ -1,0 +1,9 @@
+package com.spring.SecurityApp.services;
+
+import com.spring.SecurityApp.dto.PostDTO;
+
+public interface PostService {
+
+	PostDTO createPost(PostDTO postDTO);
+
+}

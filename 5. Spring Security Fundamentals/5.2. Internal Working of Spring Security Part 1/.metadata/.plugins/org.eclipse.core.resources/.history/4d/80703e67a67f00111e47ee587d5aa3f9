@@ -1,0 +1,5 @@
+package com.spring.SecurityApp.advices;
+
+public class ApiError {
+
+}

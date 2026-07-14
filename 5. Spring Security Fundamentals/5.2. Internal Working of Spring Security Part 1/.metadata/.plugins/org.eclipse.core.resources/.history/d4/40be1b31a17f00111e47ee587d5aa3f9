@@ -1,0 +1,5 @@
+package com.spring.SecurityApp.exceptions;
+
+public class ResourceNotFoundException {
+
+}

@@ -1,0 +1,11 @@
+package com.spring.SecurityApp.services.Impl;
+
+import org.springframework.stereotype.Service;
+import com.spring.SecurityApp.repositories.PostRepository;
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PostServiceImpl {
+	private final PostRepository postRepository;
+}
