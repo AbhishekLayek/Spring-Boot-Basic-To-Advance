@@ -1,0 +1,22 @@
+package com.spring.SecurityApp.services;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import com.spring.SecurityApp.dto.PostDTO;
+
+public interface PostService {
+
+	PostDTO createPost(PostDTO postDTO);
+
+	Optional<PostDTO> getPostById(Long id);
+
+	List<PostDTO> getAllPosts();
+
+	PostDTO updatePost(Long id, PostDTO postDTO);
+
+	PostDTO updatePostPartially(Long id, Map<String, Object> updates);
+
+	Boolean deletePostById(Long id);
+}
