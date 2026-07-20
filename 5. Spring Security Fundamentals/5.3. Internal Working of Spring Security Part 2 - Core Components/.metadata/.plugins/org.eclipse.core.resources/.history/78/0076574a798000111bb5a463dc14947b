@@ -1,5 +1,0 @@
-package com.spring.SecurityApp.repositories;
-
-public interface UserRepository {
-
-}

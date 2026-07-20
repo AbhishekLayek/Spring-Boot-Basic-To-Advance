@@ -1,5 +1,0 @@
-package com.spring.SecurityApp.services.Impl;
-
-public class UserService {
-
-}
