@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.spring.JWT.exceptions.ResourceNotFoundException;
 
-@RestControllerAdvice(basePackages = "com.spring.SecurityApp.controllers")
+@RestControllerAdvice(basePackages = "com.spring.JWT.controllers")
 public class GlobalExceptionHandler {
 	
 	private ResponseEntity<ApiResponse<?>> buildErrorResponseEntity(ApiError apiError) {
