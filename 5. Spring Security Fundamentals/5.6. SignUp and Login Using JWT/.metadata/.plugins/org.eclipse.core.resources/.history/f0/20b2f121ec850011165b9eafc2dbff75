@@ -1,0 +1,15 @@
+package com.spring.SignupLogin.services;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
+
+import com.spring.SignupLogin.repositories.PostRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class PostService {
+	private final PostRepository postRepository;
+	private final ModelMapper modelMapper;
+}

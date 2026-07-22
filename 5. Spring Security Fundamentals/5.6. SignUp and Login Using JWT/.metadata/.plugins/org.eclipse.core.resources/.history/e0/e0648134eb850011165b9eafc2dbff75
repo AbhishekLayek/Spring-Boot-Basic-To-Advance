@@ -1,0 +1,5 @@
+package com.spring.SignupLogin.exceptions;
+
+public class ResourceNotFoundException {
+
+}

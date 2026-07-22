@@ -1,0 +1,5 @@
+package com.spring.SignupLogin.auth;
+
+public class AuditorAwareImpl {
+
+}

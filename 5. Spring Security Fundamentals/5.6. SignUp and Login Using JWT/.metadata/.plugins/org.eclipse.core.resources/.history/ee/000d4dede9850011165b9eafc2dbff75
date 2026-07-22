@@ -1,0 +1,5 @@
+package com.spring.SignupLogin.dto;
+
+public class PostDTO {
+
+}
