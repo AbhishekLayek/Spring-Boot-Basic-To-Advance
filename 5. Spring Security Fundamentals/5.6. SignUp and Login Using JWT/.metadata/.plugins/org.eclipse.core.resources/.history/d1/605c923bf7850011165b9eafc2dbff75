@@ -1,7 +1,0 @@
-package com.spring.SignupLogin.clients.Impl;
-
-import com.spring.SignupLogin.clients.EmployeeRestClient;
-
-public class EmployeeRestClientImpl implements EmployeeRestClient{
-
-}

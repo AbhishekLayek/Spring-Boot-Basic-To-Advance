@@ -1,5 +1,0 @@
-package com.spring.SignupLogin.clients.Impl;
-
-public class EmployeeRestClientImpl {
-
-}
