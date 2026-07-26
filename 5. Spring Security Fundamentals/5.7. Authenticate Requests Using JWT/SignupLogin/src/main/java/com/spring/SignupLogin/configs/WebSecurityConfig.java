@@ -11,19 +11,29 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.spring.SignupLogin.filters.JWTAuthFilter;
+
+import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 public class WebSecurityConfig {
+	
+	private final JWTAuthFilter jwtAuthFilter;
+	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 		
 		httpSecurity.authorizeHttpRequests(auth -> auth
 				.requestMatchers("/posts", "/auth/**").permitAll()
-				.requestMatchers("/posts/**").hasAnyRole("ADMIN")
+				.anyRequest().authenticated()
 				)
 		.csrf(csrfConfig -> csrfConfig.disable())
-		.sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+		.sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+		.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 		
 		return httpSecurity.build();
 	}
