@@ -1,5 +1,0 @@
-package com.spring.SignupLogin.dto;
-
-public class LoginResponse {
-
-}

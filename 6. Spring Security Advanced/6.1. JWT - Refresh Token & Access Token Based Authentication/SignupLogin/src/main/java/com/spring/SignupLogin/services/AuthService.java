@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.spring.SignupLogin.dto.LoginDTO;
+import com.spring.SignupLogin.dto.LoginResponse;
 import com.spring.SignupLogin.dto.SignupDTO;
 import com.spring.SignupLogin.dto.UserDTO;
 import com.spring.SignupLogin.entities.UserEntity;
@@ -24,6 +25,7 @@ public class AuthService {
 	private final PasswordEncoder passwordEncoder;
 	private final AuthenticationManager authenticationManager;
 	private final JWTService jwtService;
+	private final UserService userService;
 	
 	public UserDTO signup(SignupDTO signupDTO) {
 		UserEntity userEntity = modelMapper.map(signupDTO, UserEntity.class);
@@ -33,13 +35,26 @@ public class AuthService {
 		return modelMapper.map(userRepository.save(userEntity), UserDTO.class);
 	}
 
-	public String login(LoginDTO loginDTO) {
+	public LoginResponse login(LoginDTO loginDTO) {
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword())
 		);
 				
 		UserEntity user = (UserEntity)authentication.getPrincipal();
 		
-		return jwtService.generateToken(user);
+		String accessToken = jwtService.generateAccessToken(user);
+		String refreshToken = jwtService.generateRefreshToken(user);
+		
+		return new LoginResponse(user.getId(), accessToken, refreshToken);
+	}
+
+	public LoginResponse refresh(String refreshToken) {
+		
+		Long userId = jwtService.getUserIdFromToken(refreshToken);
+		UserEntity user = userService.getUserById(userId);
+		
+		String accessToken = jwtService.generateAccessToken(user);
+		
+		return new LoginResponse(user.getId(), accessToken, refreshToken);
 	}
 }

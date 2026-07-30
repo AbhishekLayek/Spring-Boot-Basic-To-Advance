@@ -1,5 +1,0 @@
-package com.spring.SignupLogin.services;
-
-public class AuthService {
-
-}

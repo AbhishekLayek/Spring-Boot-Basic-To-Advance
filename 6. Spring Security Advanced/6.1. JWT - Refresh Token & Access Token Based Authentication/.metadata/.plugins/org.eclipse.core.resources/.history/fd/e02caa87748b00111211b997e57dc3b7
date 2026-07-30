@@ -1,5 +1,0 @@
-package com.spring.SignupLogin.controllers;
-
-public class AuthController {
-
-}

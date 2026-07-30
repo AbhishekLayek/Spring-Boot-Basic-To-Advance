@@ -22,10 +22,10 @@ import lombok.RequiredArgsConstructor;
 @Component
 @RequiredArgsConstructor
 public class JWTAuthFilter extends OncePerRequestFilter{
-	
+
+	private final HandlerExceptionResolver handlerExceptionResolver;
 	private final JWTService jwtService;
 	private final UserService userService;
-	private final HandlerExceptionResolver handlerExceptionResolver;
 	
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -39,7 +39,7 @@ public class JWTAuthFilter extends OncePerRequestFilter{
 				return;
 			}
 			
-			String token = requestHeaderToken.split("Bearer ")[1]; // **NOTE - Space after Bearer is very important
+			String token = requestHeaderToken.split("Bearer ")[1]; // **NOTE - space after Bearer is very important
 			
 			Long userId = jwtService.getUserIdFromToken(token);
 			
@@ -58,4 +58,5 @@ public class JWTAuthFilter extends OncePerRequestFilter{
 			handlerExceptionResolver.resolveException(request, response, null, e);
 		}
 	}
+
 }

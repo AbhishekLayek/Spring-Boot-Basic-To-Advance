@@ -207,3 +207,165 @@
 2026-07-30 00:14:26.032 INFO  [RMI TCP Connection(11)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 2026-07-30 00:14:26.040 INFO  [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 2026-07-30 00:14:26.051 INFO  [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-07-30 00:36:55.461 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-30 00:36:55.510 INFO  [restartedMain] c.s.S.SignupLoginApplication - Starting SignupLoginApplication using Java 25.0.3 with PID 34116 (D:\Spring Boot\6. Spring Security Advanced\6.1. JWT - Refresh Token & Access Token Based Authentication\SignupLogin\target\classes started by Dell in D:\Spring Boot\6. Spring Security Advanced\6.1. JWT - Refresh Token & Access Token Based Authentication\SignupLogin)
+2026-07-30 00:36:55.513 INFO  [restartedMain] c.s.S.SignupLoginApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-30 00:36:55.612 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-30 00:36:55.612 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-30 00:36:57.375 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-30 00:36:57.513 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 110 ms. Found 2 JPA repository interfaces.
+2026-07-30 00:36:59.050 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9000 (http)
+2026-07-30 00:36:59.076 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9000"]
+2026-07-30 00:36:59.080 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-30 00:36:59.081 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-30 00:36:59.189 INFO  [restartedMain] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3575 ms
+2026-07-30 00:36:59.440 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-30 00:36:59.599 INFO  [restartedMain] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-30 00:36:59.681 INFO  [restartedMain] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-30 00:37:00.047 INFO  [restartedMain] o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-07-30 00:37:00.334 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-30 00:37:00.379 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-30 00:37:00.583 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7eabeae1
+2026-07-30 00:37:00.585 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-30 00:37:00.689 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-30 00:37:00.979 INFO  [restartedMain] o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.SignupLogin.entities.PostEntity
+2026-07-30 00:37:02.091 INFO  [restartedMain] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 00:37:02.395 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-30 00:37:02.688 INFO  [restartedMain] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-30 00:37:03.341 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-07-30 00:37:04.275 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver - Exposing 12 endpoints beneath base path '/actuator'
+2026-07-30 00:37:04.373 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9000"]
+2026-07-30 00:37:04.385 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9000 (http) with context path '/'
+2026-07-30 00:37:04.398 INFO  [restartedMain] c.s.S.SignupLoginApplication - Started SignupLoginApplication in 9.565 seconds (process running for 10.464)
+2026-07-30 00:37:04.407 WARN  [restartedMain] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-07-30 00:37:04.407 WARN  [restartedMain] o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-07-30 00:37:05.235 INFO  [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-30 00:37:05.235 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-07-30 00:37:05.237 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-07-30 00:38:23.541 INFO  [RMI TCP Connection(13)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-07-30 00:38:23.560 INFO  [RMI TCP Connection(13)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-30 00:38:23.562 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9000"]
+2026-07-30 00:38:23.568 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-07-30 00:38:23.569 INFO  [RMI TCP Connection(13)-127.0.0.1] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9000"]
+2026-07-30 00:38:23.580 INFO  [RMI TCP Connection(13)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-30 00:38:23.584 INFO  [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-30 00:38:23.598 INFO  [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-07-30 23:49:43.937 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-30 23:49:43.994 INFO  [restartedMain] c.s.S.SignupLoginApplication - Starting SignupLoginApplication using Java 25.0.3 with PID 4356 (D:\Spring Boot\6. Spring Security Advanced\6.1. JWT - Refresh Token & Access Token Based Authentication\SignupLogin\target\classes started by Dell in D:\Spring Boot\6. Spring Security Advanced\6.1. JWT - Refresh Token & Access Token Based Authentication\SignupLogin)
+2026-07-30 23:49:43.996 INFO  [restartedMain] c.s.S.SignupLoginApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-30 23:49:44.086 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-30 23:49:44.087 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-30 23:49:45.823 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-30 23:49:45.903 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 64 ms. Found 2 JPA repository interfaces.
+2026-07-30 23:49:46.929 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9000 (http)
+2026-07-30 23:49:46.948 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:49:46.951 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-30 23:49:46.952 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-30 23:49:47.039 INFO  [restartedMain] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2951 ms
+2026-07-30 23:49:47.312 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-30 23:49:47.494 INFO  [restartedMain] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-30 23:49:47.601 INFO  [restartedMain] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-30 23:49:47.982 INFO  [restartedMain] o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-07-30 23:49:48.300 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-30 23:49:48.363 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-30 23:49:48.589 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22ff79eb
+2026-07-30 23:49:48.593 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-30 23:49:48.763 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-30 23:49:49.167 INFO  [restartedMain] o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.SignupLogin.entities.PostEntity
+2026-07-30 23:49:50.392 INFO  [restartedMain] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 23:49:50.718 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-30 23:49:51.040 INFO  [restartedMain] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-30 23:49:51.673 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-07-30 23:49:52.763 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver - Exposing 12 endpoints beneath base path '/actuator'
+2026-07-30 23:49:52.872 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:49:52.889 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9000 (http) with context path '/'
+2026-07-30 23:49:52.905 INFO  [restartedMain] c.s.S.SignupLoginApplication - Started SignupLoginApplication in 9.599 seconds (process running for 10.587)
+2026-07-30 23:49:52.915 WARN  [restartedMain] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-07-30 23:49:52.916 WARN  [restartedMain] o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-07-30 23:49:53.466 INFO  [RMI TCP Connection(10)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-30 23:49:53.467 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-07-30 23:49:53.469 INFO  [RMI TCP Connection(10)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-07-30 23:51:29.626 INFO  [RMI TCP Connection(13)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-07-30 23:51:29.637 INFO  [RMI TCP Connection(13)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-30 23:51:29.640 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:51:29.652 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-07-30 23:51:29.658 INFO  [RMI TCP Connection(13)-127.0.0.1] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:51:29.674 INFO  [RMI TCP Connection(13)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-30 23:51:29.680 INFO  [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-30 23:51:29.693 INFO  [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-07-30 23:52:18.010 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-07-30 23:52:18.052 INFO  [restartedMain] c.s.S.SignupLoginApplication - Starting SignupLoginApplication using Java 25.0.3 with PID 18404 (D:\Spring Boot\6. Spring Security Advanced\6.1. JWT - Refresh Token & Access Token Based Authentication\SignupLogin\target\classes started by Dell in D:\Spring Boot\6. Spring Security Advanced\6.1. JWT - Refresh Token & Access Token Based Authentication\SignupLogin)
+2026-07-30 23:52:18.053 INFO  [restartedMain] c.s.S.SignupLoginApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-30 23:52:18.109 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-30 23:52:18.109 INFO  [restartedMain] o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-30 23:52:19.526 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-30 23:52:19.625 INFO  [restartedMain] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces.
+2026-07-30 23:52:21.367 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 9000 (http)
+2026-07-30 23:52:21.399 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:52:21.406 INFO  [restartedMain] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-07-30 23:52:21.406 INFO  [restartedMain] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-30 23:52:21.565 INFO  [restartedMain] o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3455 ms
+2026-07-30 23:52:22.048 WARN  [restartedMain] o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-07-30 23:52:22.256 INFO  [restartedMain] org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-30 23:52:22.336 INFO  [restartedMain] org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-30 23:52:22.682 INFO  [restartedMain] o.h.e.b.internal.EnversServiceImpl - Envers integration enabled? : true
+2026-07-30 23:52:22.931 INFO  [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-30 23:52:22.976 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-07-30 23:52:23.184 INFO  [restartedMain] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@29831268
+2026-07-30 23:52:23.187 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-07-30 23:52:23.310 INFO  [restartedMain] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/prod_ready_features?createDatabaseIfNotExist=true&useSSL=false]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 8.0.46
+	Default catalog/schema: prod_ready_features/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-30 23:52:23.636 INFO  [restartedMain] o.h.e.c.i.m.AuditMetadataGenerator - Adding properties for entity: com.spring.SignupLogin.entities.PostEntity
+2026-07-30 23:52:24.707 INFO  [restartedMain] org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-30 23:52:25.028 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-30 23:52:25.265 INFO  [restartedMain] o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-30 23:52:25.815 INFO  [restartedMain] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userService
+2026-07-30 23:52:26.700 INFO  [restartedMain] o.s.b.a.e.web.EndpointLinksResolver - Exposing 12 endpoints beneath base path '/actuator'
+2026-07-30 23:52:26.793 INFO  [restartedMain] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:52:26.809 INFO  [restartedMain] o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 9000 (http) with context path '/'
+2026-07-30 23:52:26.824 INFO  [restartedMain] c.s.S.SignupLoginApplication - Started SignupLoginApplication in 9.358 seconds (process running for 10.259)
+2026-07-30 23:52:26.834 WARN  [restartedMain] o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-07-30 23:52:26.835 WARN  [restartedMain] o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-07-30 23:52:27.371 INFO  [RMI TCP Connection(9)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-30 23:52:27.371 INFO  [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-07-30 23:52:27.373 INFO  [RMI TCP Connection(9)-127.0.0.1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-07-30 23:55:13.458 INFO  [RMI TCP Connection(15)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-07-30 23:55:13.467 INFO  [RMI TCP Connection(15)-127.0.0.1] o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-07-30 23:55:13.469 INFO  [tomcat-shutdown] o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:55:13.478 INFO  [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-07-30 23:55:13.481 INFO  [RMI TCP Connection(15)-127.0.0.1] o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-9000"]
+2026-07-30 23:55:13.494 INFO  [RMI TCP Connection(15)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-07-30 23:55:13.502 INFO  [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-07-30 23:55:13.515 INFO  [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
