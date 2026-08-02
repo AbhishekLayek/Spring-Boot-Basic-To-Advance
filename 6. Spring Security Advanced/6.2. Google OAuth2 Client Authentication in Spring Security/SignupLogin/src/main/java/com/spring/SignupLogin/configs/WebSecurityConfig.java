@@ -13,6 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import com.spring.SignupLogin.filters.JWTAuthFilter;
+import com.spring.SignupLogin.handlers.OAuth2SuccessHandler;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 public class WebSecurityConfig {
 	
 	private final JWTAuthFilter jwtAuthFilter;
+	private final OAuth2SuccessHandler oauth2SuccessHandler;
 	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
@@ -30,8 +32,12 @@ public class WebSecurityConfig {
 				.requestMatchers("/posts", "/auth/**").permitAll()
 				.anyRequest().authenticated())
 		.csrf(csrfConfig -> csrfConfig.disable())
-		.sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-		.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+		.sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
+		.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+		.oauth2Login(oauth2Config -> oauth2Config
+			.failureUrl("/login?error=true")
+			.successHandler(oauth2SuccessHandler)
+		);
 		
 		return httpSecurity.build();
 	}
