@@ -1,0 +1,60 @@
+package com.spring.SignupLogin.services;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.spring.SignupLogin.dto.LoginDTO;
+import com.spring.SignupLogin.dto.LoginResponse;
+import com.spring.SignupLogin.dto.SignupDTO;
+import com.spring.SignupLogin.dto.UserDTO;
+import com.spring.SignupLogin.entities.UserEntity;
+import com.spring.SignupLogin.repositories.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class AuthService {
+	
+	private final UserRepository userRepository;
+	private final ModelMapper modelMapper;
+	private final PasswordEncoder passwordEncoder;
+	private final AuthenticationManager authenticationManager;
+	private final JWTService jwtService;
+	private final UserService userService;
+	
+	public UserDTO signup(SignupDTO signupDTO) {
+		UserEntity userEntity = modelMapper.map(signupDTO, UserEntity.class);
+		
+		userEntity.setPassword(passwordEncoder.encode(signupDTO.getPassword()));
+		
+		return modelMapper.map(userRepository.save(userEntity), UserDTO.class);
+	}
+
+	public LoginResponse login(LoginDTO loginDTO) {
+		Authentication authentication = authenticationManager.authenticate(
+				new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword())
+		);
+				
+		UserEntity user = (UserEntity)authentication.getPrincipal();
+		
+		String accessToken = jwtService.generateAccessToken(user);
+		String refreshToken = jwtService.generateRefreshToken(user);
+		
+		return new LoginResponse(user.getId(), accessToken, refreshToken);
+	}
+
+	public LoginResponse refresh(String refreshToken) {
+		
+		Long userId = jwtService.getUserIdFromToken(refreshToken);
+		UserEntity user = userService.getUserById(userId);
+		
+		String accessToken = jwtService.generateAccessToken(user);
+		
+		return new LoginResponse(user.getId(), accessToken, refreshToken);
+	}
+}
