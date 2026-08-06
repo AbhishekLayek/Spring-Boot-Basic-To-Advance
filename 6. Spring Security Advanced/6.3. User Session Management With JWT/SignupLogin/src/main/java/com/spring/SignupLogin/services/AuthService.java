@@ -26,6 +26,7 @@ public class AuthService {
 	private final AuthenticationManager authenticationManager;
 	private final JWTService jwtService;
 	private final UserService userService;
+	private final SessionService sessionService;
 	
 	public UserDTO signup(SignupDTO signupDTO) {
 		UserEntity userEntity = modelMapper.map(signupDTO, UserEntity.class);
@@ -45,12 +46,17 @@ public class AuthService {
 		String accessToken = jwtService.generateAccessToken(user);
 		String refreshToken = jwtService.generateRefreshToken(user);
 		
+		sessionService.createSession(user, refreshToken);
+		
 		return new LoginResponse(user.getId(), accessToken, refreshToken);
 	}
 
 	public LoginResponse refresh(String refreshToken) {
 		
 		Long userId = jwtService.getUserIdFromToken(refreshToken);
+		
+		sessionService.validateSession(refreshToken);
+		
 		UserEntity user = userService.getUserById(userId);
 		
 		String accessToken = jwtService.generateAccessToken(user);
