@@ -2,6 +2,7 @@ package com.spring.SignupLogin.configs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,9 +13,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.spring.SignupLogin.enums.Role;
 import com.spring.SignupLogin.filters.JWTAuthFilter;
 import com.spring.SignupLogin.handlers.OAuth2SuccessHandler;
-
 import lombok.RequiredArgsConstructor;
 
 @Configuration
@@ -25,11 +26,15 @@ public class WebSecurityConfig {
 	private final JWTAuthFilter jwtAuthFilter;
 	private final OAuth2SuccessHandler oauth2SuccessHandler;
 	
+	private final String[] publicRoutes = {"/auth/**","/error", "/home.html"};
+	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 		
 		httpSecurity.authorizeHttpRequests(auth -> auth
-				.requestMatchers("/posts", "/auth/**").permitAll()
+				.requestMatchers(publicRoutes).permitAll()
+				.requestMatchers(HttpMethod.GET, "/posts/**").permitAll()
+				.requestMatchers(HttpMethod.POST, "/posts/**").hasAnyRole(Role.ADMIN.name(), Role.CREATOR.name())
 				.anyRequest().authenticated())
 		.csrf(csrfConfig -> csrfConfig.disable())
 		.sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
