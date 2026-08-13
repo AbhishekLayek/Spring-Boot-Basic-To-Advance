@@ -1,0 +1,13 @@
+package com.spring.SignupLogin.enums;
+
+public enum Permission {
+	USER_CREATE,
+	USER_VIEW,
+	USER_UPDATE,
+	USER_DELETE,
+	
+	POST_CREATE,
+	POST_VIEW,
+	POST_UPDATE,
+	POST_DELETE;
+}
