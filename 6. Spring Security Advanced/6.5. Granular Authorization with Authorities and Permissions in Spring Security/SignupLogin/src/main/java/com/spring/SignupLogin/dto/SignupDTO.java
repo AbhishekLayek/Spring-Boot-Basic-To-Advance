@@ -1,5 +1,9 @@
 package com.spring.SignupLogin.dto;
 
+import java.util.Set;
+
+import com.spring.SignupLogin.enums.Role;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -26,4 +30,6 @@ public class SignupDTO {
 	@NotBlank(message = "Password is required")
 	@Size(min = 5, max = 50, message = "Password must be between 5 and 50 characters")
 	private String password;
+	
+	private Set<Role> roles;
 }
