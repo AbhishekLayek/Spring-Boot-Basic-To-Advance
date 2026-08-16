@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -20,16 +21,20 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
+@EnableMethodSecurity(securedEnabled = true)
 public class WebSecurityConfig {
 	
 	private final JWTAuthFilter jwtAuthFilter;
 	private final OAuth2SuccessHandler oauth2SuccessHandler;
 	
+	private final String[] publicRoutes = {"/auth/**", "/error", "/home.html"};
+	
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) {
 		
 		httpSecurity.authorizeHttpRequests(auth -> auth
-				.requestMatchers("/posts", "/auth/**").permitAll()
+				.requestMatchers(publicRoutes).permitAll()
+				.requestMatchers("/posts/**").authenticated()
 				.anyRequest().authenticated())
 		.csrf(csrfConfig -> csrfConfig.disable())
 		.sessionManagement(sessionConfig -> sessionConfig.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))

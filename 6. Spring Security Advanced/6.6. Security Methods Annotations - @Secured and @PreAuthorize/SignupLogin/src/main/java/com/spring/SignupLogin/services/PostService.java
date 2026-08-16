@@ -8,10 +8,12 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.data.util.ReflectionUtils;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.spring.SignupLogin.dto.PostDTO;
 import com.spring.SignupLogin.entities.PostEntity;
+import com.spring.SignupLogin.entities.UserEntity;
 import com.spring.SignupLogin.exceptions.ResourceNotFoundException;
 import com.spring.SignupLogin.repositories.PostRepository;
 
@@ -28,7 +30,9 @@ public class PostService {
 	}
 	
 	public PostDTO createPost(PostDTO postDTO) {
+		UserEntity user = (UserEntity)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		PostEntity postEntity = modelMapper.map(postDTO, PostEntity.class);
+		postEntity.setAuthor(user);
 		return modelMapper.map(postRepository.save(postEntity), PostDTO.class);
 	}
 
