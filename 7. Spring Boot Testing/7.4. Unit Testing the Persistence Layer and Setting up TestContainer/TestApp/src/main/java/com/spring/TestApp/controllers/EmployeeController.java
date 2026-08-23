@@ -33,8 +33,8 @@ public class EmployeeController {
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<EmployeeDTO> updateEmployee(@RequestParam Long id, @RequestBody EmployeeDTO empDTO){
-		return ResponseEntity.ok(employeeService.updateEmployee(id, empDTO));
+	public ResponseEntity<EmployeeDTO> updateEmployee(@RequestParam Long id, @RequestBody EmployeeDTO employeeDTO){
+		return ResponseEntity.ok(employeeService.updateEmployee(id, employeeDTO));
 	}
 	
 	@DeleteMapping("/delete")

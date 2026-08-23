@@ -1,6 +1,5 @@
 package com.spring.TestApp.services;
 
-import org.jspecify.annotations.Nullable;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -36,9 +35,9 @@ public class EmployeeService {
 		return modelMapper.map(employee, EmployeeDTO.class);
 	}
 
-	public EmployeeDTO updateEmployee(Long id, EmployeeDTO empDTO) {
+	public EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO) {
 		validateEmployeeExistance(id);
-		Employee employee = modelMapper.map(empDTO, Employee.class);
+		Employee employee = modelMapper.map(employeeDTO, Employee.class);
 		employee.setId(id);
 		return modelMapper.map(employeeRepository.save(employee), EmployeeDTO.class);
 	}
