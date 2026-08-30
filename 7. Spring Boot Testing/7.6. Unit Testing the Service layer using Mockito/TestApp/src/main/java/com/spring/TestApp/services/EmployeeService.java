@@ -30,8 +30,6 @@ public class EmployeeService {
 	public EmployeeDTO getEmployeeById(Long id) {
 		Employee employee = employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee Not Found With Id: " + id));
 		
-		if(employee == null) throw new ResourceNotFoundException("Employee Not Found With Id " + id);
-		
 		return modelMapper.map(employee, EmployeeDTO.class);
 	}
 
