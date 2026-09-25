@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: SpringAI
+  ai:
+    google:
+      genai:
+        api-key: <GOOGLE GENAI API KEY>
+        chat:
+          model: gemini-3.6-flash
+        embedding:
+          api-key: <GOOGLE GENAI API KEY>
+          text:
+            model: gemini-embedding-001
+            dimensions: 1536
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 1536
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+            table-name: chat_memory
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vectordb
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
